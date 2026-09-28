@@ -253,7 +253,44 @@ a { color: inherit; }
 .facts dt { color: var(--ink-3); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 .facts dd .mono { font-family: var(--mono); font-size: 13px; user-select: all; }
-.info { margin: 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.desc { margin: 0; font-size: 15px; line-height: 1.55; max-width: 70ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.chips li {
+  font-size: 13px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 1px 9px;
+  color: var(--ink-2);
+}
+.pitch { margin: 0; background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; font-size: 14px; max-width: 76ch; }
+.pitch b { display: block; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.hint { margin: 0; font-size: 13px; color: var(--ink-2); padding-left: 10px; border-left: 3px solid var(--s-nicht_erreicht); }
+@media (hover: none), (pointer: coarse) { .dial-actions .qr-btn { display: none; } }
+.qr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(8, 12, 16, .55);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.qr-box {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 20px;
+  width: min(360px, 100%);
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+}
+.qr-box h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0; line-height: 1.15; }
+.qr-code { background: #ffffff; padding: 8px; border-radius: 8px; width: 220px; max-width: 100%; }
+.qr-code svg { display: block; width: 100%; height: auto; }
+.qr-box p { margin: 0; color: var(--ink-2); font-size: 14px; }
 .checks { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: 13px; }
 .badge {
   display: inline-flex;
@@ -379,6 +416,18 @@ a { color: inherit; }
 
 <div class="toast" id="toast" role="status" hidden></div>
 
+<div class="qr-overlay" id="qr" hidden>
+  <div class="qr-box" role="dialog" aria-modal="true" aria-labelledby="qr-name">
+    <h2 id="qr-name"></h2>
+    <div class="number" id="qr-number"></div>
+    <div class="qr-code" id="qr-code"></div>
+    <p>Mit der Handy-Kamera scannen, dann öffnet sich dein Telefon mit dieser Nummer.</p>
+    <button class="btn" id="qr-close" type="button">Schließen</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+
 <script>
 (function () {
   "use strict";
@@ -488,6 +537,31 @@ a { color: inherit; }
     } catch (e) { fallback(); }
   }
 
+  /* QR-Code zum Anrufen mit dem Handy */
+  var qrEl = $("qr");
+  var qrReturn = null;
+  function openQr(l) {
+    if (!l || typeof window.qrcode !== "function") return;
+    var href = telHref(l.telefon);
+    if (!href) return;
+    var qr = window.qrcode(0, "M");
+    qr.addData(href);
+    qr.make();
+    $("qr-code").innerHTML = qr.createSvgTag({ cellSize: 6, margin: 8, scalable: true });
+    $("qr-name").textContent = l.name || "";
+    $("qr-number").textContent = l.telefon || "";
+    qrReturn = document.activeElement;
+    qrEl.hidden = false;
+    $("qr-close").focus();
+  }
+  function closeQr() {
+    qrEl.hidden = true;
+    if (qrReturn && qrReturn.focus) qrReturn.focus();
+  }
+  $("qr-close").addEventListener("click", closeQr);
+  qrEl.addEventListener("click", function (e) { if (e.target === qrEl) closeQr(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !qrEl.hidden) closeQr(); });
+
   /* Schreiben: pro Dokument eins nach dem anderen */
   function write(id, patch) {
     if (!db || readOnly) return Promise.resolve();
@@ -529,17 +603,29 @@ a { color: inherit; }
   /* Karte bauen */
   function buildCard(l) {
     var numEl = el("span", { class: "number" });
-    var callA = el("a", { class: "call" }, ["Anrufen"]);
+    var callA = el("a", { class: "call", target: "_blank", rel: "noopener" }, ["Anrufen"]);
     var copyB = el("button", { type: "button" }, ["Kopieren"]);
-    var dial = el("div", { class: "dial" }, [numEl, el("div", { class: "dial-actions" }, [callA, copyB])]);
+    var qrB = typeof window.qrcode === "function" ? el("button", { type: "button", class: "qr-btn", title: "QR-Code zum Anrufen mit dem Handy" }, ["QR"]) : null;
+    var dial = el("div", { class: "dial" }, [numEl, el("div", { class: "dial-actions" }, [callA, copyB, qrB])]);
     copyB.addEventListener("click", function () { copy(numEl.textContent, copyB); });
+    callA.addEventListener("click", function () {
+      var n = numEl.textContent;
+      try { navigator.clipboard.writeText(n).catch(function () {}); } catch (e) { /* ohne Zwischenablage */ }
+      toast("Telefon wird geöffnet. Falls nicht: Die Nummer ist kopiert.");
+    });
+    if (qrB) qrB.addEventListener("click", function () {
+      openQr(leads.find(function (x) { return x.id === card.dataset.id; }));
+    });
 
     var name = el("h3", { class: "name" });
     var meta = el("div", { class: "meta" });
     var head = el("div", { class: "lead-head" }, [el("div", { class: "who" }, [name, meta]), dial]);
 
+    var desc = el("p", { class: "desc" });
+    var chips = el("ul", { class: "chips", "aria-label": "Leistungen" });
     var facts = el("dl", { class: "facts" });
-    var info = el("p", { class: "info" });
+    var pitch = el("p", { class: "pitch" });
+    var hint = el("p", { class: "hint" });
     var checks = el("div", { class: "checks" });
 
     var statusRow = el("div", { class: "status-row", role: "group", "aria-label": "Status" });
@@ -580,9 +666,9 @@ a { color: inherit; }
     ]);
     var stamp = el("div", { class: "stamp" });
 
-    var card = el("article", { class: "lead" }, [head, facts, info, checks, statusRow, work, stamp]);
+    var card = el("article", { class: "lead" }, [head, desc, chips, facts, pitch, hint, checks, statusRow, work, stamp]);
     card.dataset.id = l.id;
-    card._r = { numEl: numEl, callA: callA, name: name, meta: meta, facts: facts, info: info, checks: checks, statusRow: statusRow, ta: ta, date: date, stamp: stamp };
+    card._r = { numEl: numEl, callA: callA, name: name, meta: meta, desc: desc, chips: chips, facts: facts, pitch: pitch, hint: hint, checks: checks, statusRow: statusRow, ta: ta, date: date, stamp: stamp };
     return card;
   }
 
@@ -603,11 +689,20 @@ a { color: inherit; }
     var href = telHref(l.telefon);
     if (href) { r.callA.setAttribute("href", href); r.callA.hidden = false; } else { r.callA.hidden = true; }
 
+    var text = l.beschreibung || l.info || "";
+    r.desc.textContent = text;
+    r.desc.hidden = !text;
+    var services = Array.isArray(l.leistungen) ? l.leistungen : [];
+    fill(r.chips, services.map(function (x) { return el("li", null, [String(x)]); }));
+    r.chips.hidden = services.length === 0;
+
     var f = [];
     if (l.inhaber) f.push(["Inhaber", l.inhaber]);
     if (l.telefon2) f.push(["2. Nummer", l.telefon2, true]);
     if (l.email) f.push(["E-Mail", l.email, true]);
     if (l.zeiten) f.push(["Geöffnet", l.zeiten]);
+    if (l.bewertung) f.push(["Bewertungen", l.bewertung]);
+    if (l.online) f.push(["Online bisher", l.online]);
     fill(r.facts, f.reduce(function (acc, row) {
       acc.push(el("dt", null, [row[0]]));
       acc.push(el("dd", null, [row[2] ? el("span", { class: "mono" }, [row[1]]) : row[1]]));
@@ -615,8 +710,10 @@ a { color: inherit; }
     }, []));
     r.facts.hidden = f.length === 0;
 
-    r.info.textContent = l.info || "";
-    r.info.hidden = !l.info;
+    fill(r.pitch, l.ansatz ? [el("b", null, ["Gesprächsansatz"]), l.ansatz] : []);
+    r.pitch.hidden = !l.ansatz;
+    r.hint.textContent = l.hinweis ? "Prüfen: " + l.hinweis : "";
+    r.hint.hidden = !l.hinweis;
 
     var q = encodeURIComponent((l.name || "") + " " + (l.adresse || "Nürnberg"));
     fill(r.checks, [
@@ -651,7 +748,7 @@ a { color: inherit; }
       if (state.status === "_due") { if (!isDue(l)) return false; }
       else if (state.status && (l.status || "offen") !== state.status) return false;
       if (q) {
-        var hay = [l.name, l.adresse, l.stadtteil, l.branche, l.inhaber, l.telefon, l.notiz].join(" ").toLowerCase();
+        var hay = [l.name, l.adresse, l.stadtteil, l.branche, l.inhaber, l.telefon, l.notiz, l.beschreibung, (l.leistungen || []).join(" ")].join(" ").toLowerCase();
         if (hay.indexOf(q) === -1) return false;
       }
       return true;
@@ -758,13 +855,14 @@ a { color: inherit; }
   window.addEventListener("pagehide", function () { Array.from(noteTimers.keys()).forEach(flushNote); });
 
   function csvCell(v) {
-    var s = String(v == null ? "" : v);
+    var s = Array.isArray(v) ? v.join(", ") : String(v == null ? "" : v);
     return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
   }
   function buildCsv() {
     var labels = {}; STATUS.forEach(function (s) { labels[s.key] = s.label; });
     var cols = [["name", "Name"], ["branche", "Branche"], ["telefon", "Telefon"], ["telefon2", "Telefon 2"], ["email", "E-Mail"], ["inhaber", "Inhaber"],
-      ["adresse", "Adresse"], ["stadtteil", "Stadtteil"], ["zeiten", "Öffnungszeiten"], ["status", "Status"], ["rueckruf", "Wiedervorlage"], ["notiz", "Notizen"], ["info", "Info"], ["quelle", "Quelle"]];
+      ["adresse", "Adresse"], ["stadtteil", "Stadtteil"], ["zeiten", "Öffnungszeiten"], ["bewertung", "Bewertungen"], ["beschreibung", "Beschreibung"], ["leistungen", "Leistungen"],
+      ["online", "Online bisher"], ["ansatz", "Gesprächsansatz"], ["hinweis", "Prüfen"], ["status", "Status"], ["rueckruf", "Wiedervorlage"], ["notiz", "Notizen"], ["quelle", "Quelle"]];
     var rows = [cols.map(function (c) { return c[1]; }).join(";")];
     visibleLeads().forEach(function (l) {
       rows.push(cols.map(function (c) { return csvCell(c[0] === "status" ? labels[l.status || "offen"] : l[c[0]]); }).join(";"));

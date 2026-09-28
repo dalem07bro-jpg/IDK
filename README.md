@@ -5,6 +5,10 @@ Anrufliste mit lokalen Betrieben, die keine eigene Website haben: Zielgruppe fü
 - **App:** [`app/leads.html`](app/leads.html), veröffentlicht als claude.ai-Artifact „Website-Leads Nürnberg“.
   Status (Offen, Nicht erreicht, Rückruf, Interesse, Termin, Kunde, Kein Interesse), Notizen und Wiedervorlage
   werden in der Datenbank des Artifacts gespeichert. Export als CSV direkt aus der App.
+- **Pro Betrieb:** ausführliche Beschreibung, Leistungen, Bewertungen, bisheriger Online-Auftritt, ein Gesprächsansatz
+  und Hinweise, was vor dem Anruf zu prüfen ist.
+- **Anrufen:** Der Knopf öffnet die Telefon-App (`tel:`-Link) und kopiert die Nummer zusätzlich. Am Computer zeigt „QR“
+  einen QR-Code, den du mit der Handy-Kamera scannst, dann wählt das Handy die Nummer.
 - **Daten:** [`data/leads-nuernberg.json`](data/leads-nuernberg.json) und
   [`data/leads-nuernberg.csv`](data/leads-nuernberg.csv) (Semikolon, UTF-8 mit BOM, öffnet direkt in Excel).
 

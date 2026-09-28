@@ -11,9 +11,19 @@
     "email": "",
     "inhaber": "Petra Märlender",
     "zeiten": "",
-    "info": "Friseur plus Kosmetik, Fußpflege und Solarium. Online nur in Branchenbüchern und auf der Wella-Salonseite.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B29405742/petra-s-frisoer-stube-kosmetik-fusspflege-solarium.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B29405742/petra-s-frisoer-stube-kosmetik-fusspflege-solarium.html",
+    "beschreibung": "Kleiner Salon in Langwasser, geführt von Inhaberin Petra Märlender, die selbst schneidet. Neben Haarschnitten gibt es Kosmetik, Fußpflege und ein Solarium, also vier Angebote unter einem Dach. Gearbeitet wird mit Wella-Produkten, klassische wie moderne Schnitte. Kundinnen loben, dass sie sich Zeit für die Typberatung nimmt und Termine pünktlich eingehalten werden.",
+    "leistungen": [
+      "Damen- & Herrenhaarschnitt",
+      "Kosmetik",
+      "Fußpflege",
+      "Solarium"
+    ],
+    "online": "Nur Branchenbücher (11880, Gelbe Seiten, Das Örtliche) und die Wella-Salonsuche.",
+    "ansatz": "Vier Leistungen, die online niemand sieht. Eine Seite mit Leistungen, Preisen und Öffnungszeiten bringt Neukundinnen aus Langwasser, die gezielt nach Fußpflege oder Solarium suchen.",
+    "bewertung": "Positive Einzelbewertungen (Beratung, pünktliche Termine)",
+    "hinweis": "Öffnungszeiten sind nicht veröffentlicht: im Gespräch erfragen."
   },
   {
     "id": "nbg-gado-hairstyle",
@@ -27,9 +37,19 @@
     "email": "",
     "inhaber": "Domenico Allocca",
     "zeiten": "",
-    "info": "Trendsalon in der Fußgängerzone nahe der Lorenzkirche (TIGI / Toni&Guy-Schnitte).",
     "website": "keine",
-    "quelle": "https://www.yelp.com/biz/gado-hairstyle-n%C3%BCrnberg"
+    "quelle": "https://www.yelp.com/biz/gado-hairstyle-n%C3%BCrnberg",
+    "beschreibung": "Trendsalon mitten in der Altstadt, in der Fußgängerzone nahe der Lorenzkirche, laut Eintrag direkt hinter Karstadt mit Parkhaus in der Nähe. Inhaber ist Domenico Allocca. Geschnitten wird nach den Styles von TIGI (Global Urban Styles) und dem Toni&Guy Advanced Cutting System, zusätzlich gibt es Kosmetik.",
+    "leistungen": [
+      "Trendhaarschnitte (TIGI)",
+      "Toni&Guy Cutting System",
+      "Styling",
+      "Kosmetik"
+    ],
+    "online": "Yelp, friseur.com, goyellow, meinestadt.",
+    "ansatz": "Top-Lage mit viel Laufkundschaft und Touristen. Eine Website mit Bildern der Schnitte und Online-Terminbuchung passt zum Trend-Anspruch des Salons.",
+    "bewertung": "",
+    "hinweis": ""
   },
   {
     "id": "nbg-ihr-friseur-113",
@@ -43,9 +63,19 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Meisterbetrieb, 5 Sterne bei Yelp. 11880 nennt noch Schoppershofstr. 18: Adresse im Gespräch kurz bestätigen.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B35510575/ihr-friseur-113-friseur.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B35510575/ihr-friseur-113-friseur.html",
+    "beschreibung": "Familiengeführter Meisterbetrieb, gegründet 1989, an der Äußeren Sulzbacher Straße in Gärten bei Wöhrd. Der Salon wirbt mit Qualität zu bezahlbaren Preisen für die ganze Familie und guter Beratung rund um Pflege und Schnitt. Geöffnet dienstags bis samstags. Kunden schreiben „nett, gut und günstig“ und „beste Friseurin der Stadt“.",
+    "leistungen": [
+      "Damenhaarschnitt",
+      "Herrenhaarschnitt",
+      "Kinderhaarschnitt",
+      "Pflegeberatung"
+    ],
+    "online": "Yelp, 11880, friseursalon.org, gofriseur.",
+    "ansatz": "Seit über 35 Jahren im Viertel, aber online unsichtbar. Neue Familien im Viertel finden den Salon nur zufällig. Eine Seite mit Preisliste und Öffnungszeiten reicht schon.",
+    "bewertung": "5 Sterne bei Yelp",
+    "hinweis": "11880 nennt noch Schoppershofstr. 18: Adresse bestätigen."
   },
   {
     "id": "nbg-hair-18",
@@ -59,9 +89,17 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Sa 9–18",
-    "info": "4,4 Sterne bei 7 Bewertungen.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B28834680/hair-18.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631771B28834680/hair-18.html",
+    "beschreibung": "Friseursalon in Mögeldorf an der Laufamholzstraße, geöffnet Montag bis Samstag von 9 bis 18 Uhr. Kunden loben in den Bewertungen Kompetenz und Service.",
+    "leistungen": [
+      "Damenhaarschnitt",
+      "Herrenhaarschnitt"
+    ],
+    "online": "golocal, Das Örtliche, Gelbe Seiten, 11880.",
+    "ansatz": "Gute Bewertungen, aber nur in Verzeichnissen verstreut. Eine Website mit Leistungen und Terminanfrage, verknüpft mit dem Google-Profil.",
+    "bewertung": "4,4 Sterne bei 7 Bewertungen",
+    "hinweis": "Gelbe Seiten führt auch ein „Hair 18“ in Sebald (90403): fragen, ob es eine zweite Filiale gibt."
   },
   {
     "id": "nbg-le-fil",
@@ -75,9 +113,19 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Änderungen und Maßanfertigung, auch Heimtextilien. Hat ein YouTube-Video, aber keine Website.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B102023085/aenderungsschneiderei-le-fil.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B102023085/aenderungsschneiderei-le-fil.html",
+    "beschreibung": "Schneiderei am Jakobsplatz in der Altstadt für Änderungen und Maßanfertigung. Bearbeitet werden Hosen, Kleider, Röcke, Blusen, Blazer, Hemden, Jacken, Mäntel, Jeans, Ball- und Brautkleider sowie Kinderkleidung. Dazu kommen Heimtextilien wie Bettwäsche, Vorhänge, Gardinen, Rollos, Kissenbezüge und Tischdecken. Im Verzeichnis für nachhaltige Betriebe suchdichgruen.de ist sie gelistet.",
+    "leistungen": [
+      "Änderungen",
+      "Maßanfertigung",
+      "Braut- & Ballkleider",
+      "Vorhänge & Heimtextilien"
+    ],
+    "online": "Ein YouTube-Video, suchdichgruen.de, Cylex, 11880.",
+    "ansatz": "Brautkleid-Änderungen und Maßanfertigung sind Aufträge, nach denen gezielt gesucht wird. Eine Seite mit Leistungen, Bildern und dem vorhandenen Video wirkt sofort professionell.",
+    "bewertung": "5 Sterne (1 Bewertung)",
+    "hinweis": ""
   },
   {
     "id": "nbg-burak-schneiderei",
@@ -87,13 +135,21 @@
     "adresse": "Adamstr. 15, 90489 Nürnberg",
     "stadtteil": "Rennweg",
     "telefon": "0911 5817643",
-    "telefon2": "",
+    "telefon2": "0911 3689510 (laut Cylex)",
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Teils auch unter Künhofer Str. 16 gelistet.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B54294739/burak-aenderungsschneiderei-schneiderei.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B54294739/burak-aenderungsschneiderei-schneiderei.html",
+    "beschreibung": "Änderungsschneiderei in der Adamstraße im Stadtteil Rennweg, teils auch unter Künhofer Straße 16 gelistet. Online gibt es kaum Informationen: keine Öffnungszeiten, keine Bewertungen, nur Einträge in Branchenbüchern.",
+    "leistungen": [
+      "Änderungen",
+      "Schneiderarbeiten"
+    ],
+    "online": "Nur Branchenbücher (11880, Cylex, Stadtbranchenbuch).",
+    "ansatz": "Wer online nichts findet, geht zur nächsten Schneiderei. Schon eine kleine Seite mit Öffnungszeiten, Standardpreisen (Hose kürzen, Reißverschluss) und Anfahrt macht einen Unterschied.",
+    "bewertung": "",
+    "hinweis": "Zwei Nummern im Umlauf: 0911 5817643 (11880) und 0911 3689510 (Cylex). Adresse evtl. Künhofer Str. 16."
   },
   {
     "id": "nbg-kamo",
@@ -107,9 +163,18 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Fr 9–12 und 13–18, Sa 10–13",
-    "info": "Gleichzeitig Hermes-Paketshop. Sehr freundliche Bewertungen.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B38625758/aenderungsschneiderei-kamo.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B38625758/aenderungsschneiderei-kamo.html",
+    "beschreibung": "Änderungsschneiderei in der Humboldtstraße (Galgenhof/Lichtenhof), geöffnet Montag bis Freitag 9–12 und 13–18 Uhr, Samstag 10–13 Uhr. Der Laden ist gleichzeitig Hermes-Paketshop und hat dadurch viel Laufkundschaft. Kunden loben die sehr freundlichen Inhaber, die auf alle Wünsche eingehen.",
+    "leistungen": [
+      "Änderungen",
+      "Reparaturen",
+      "Hermes-Paketshop"
+    ],
+    "online": "Das Örtliche, Gelbe Seiten, golocal, Cylex.",
+    "ansatz": "Viel Laufkundschaft durch den Paketshop, aber keine Seite, auf die man sie verweisen kann. Website mit Preisliste plus QR-Code-Aufsteller im Laden.",
+    "bewertung": "Positive Bewertungen (golocal, yably)",
+    "hinweis": ""
   },
   {
     "id": "nbg-jakimovska",
@@ -123,9 +188,17 @@
     "email": "",
     "inhaber": "Frau Jakimovska",
     "zeiten": "Di–Fr vormittags und 15–17:30, Sa 10–12:30",
-    "info": "Bewertungen loben Genauigkeit und Preis-Leistung.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B102683416/jakimovska-aenderungsschneiderei.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B102683416/jakimovska-aenderungsschneiderei.html",
+    "beschreibung": "Änderungsschneiderei in der Nibelungenstraße in der Südstadt, geführt von Frau Jakimovska. Geöffnet Di 9–13 und 15–17:30, Mi–Fr 10–12:30 und 15–17:30, Sa 10–12:30 Uhr. Kunden beschreiben sie als sehr freundlich, präzise und zuverlässig, sie geht auf individuelle Wünsche ein und hat ein sehr gutes Preis-Leistungs-Verhältnis.",
+    "leistungen": [
+      "Änderungen",
+      "Individuelle Anpassungen"
+    ],
+    "online": "Das Telefonbuch, Das Örtliche, golocal, 11880.",
+    "ansatz": "Sehr gute Bewertungen, aber verwinkelte Öffnungszeiten, die nur in Verzeichnissen stehen. Eine Seite mit Zeiten und Preisen spart ihr auch Telefonate.",
+    "bewertung": "Sehr positive Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-schneiderei-zabo",
@@ -139,9 +212,16 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Di–Fr 10–13 und 14–18, Sa 10–13",
-    "info": "Eintrag ohne Firmennamen: Namen im Gespräch erfragen.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060694693B112577198/aenderungsschneiderei.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060694693B112577198/aenderungsschneiderei.html",
+    "beschreibung": "Änderungsschneiderei in der Zerzabelshofstraße 5. Im Eintrag steht kein Firmenname, erreichbar ist sie über eine Handynummer. Geöffnet Dienstag bis Freitag 10–13 und 14–18 Uhr, Samstag 10–13 Uhr.",
+    "leistungen": [
+      "Änderungen"
+    ],
+    "online": "Nur ein namenloser 11880-Eintrag.",
+    "ansatz": "Ohne Namen und Website ist die Schneiderei online praktisch nicht auffindbar. Hier passt das Komplettpaket: Name, Website und Google-Profil.",
+    "bewertung": "",
+    "hinweis": "Namen der Inhaberin oder des Inhabers im Gespräch erfragen."
   },
   {
     "id": "nbg-kumlu",
@@ -155,9 +235,16 @@
     "email": "",
     "inhaber": "Semiha Kumlu",
     "zeiten": "",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B43360104/semiha-kumlu-aenderungsschneiderei.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B43360104/semiha-kumlu-aenderungsschneiderei.html",
+    "beschreibung": "Änderungsschneiderei von Semiha Kumlu in der Unteren Kanalstraße in Gostenhof. Online sind weder Öffnungszeiten noch Bewertungen hinterlegt, es gibt nur Einträge in Branchenbüchern.",
+    "leistungen": [
+      "Änderungen"
+    ],
+    "online": "Nur Branchenbücher (11880, Stadtbranchenbuch, suchehandwerker).",
+    "ansatz": "Gostenhof ist ein junges Viertel, in dem viel über Google gesucht wird. Eine einfache Seite mit Öffnungszeiten und Preisen reicht.",
+    "bewertung": "",
+    "hinweis": "Öffnungszeiten unbekannt."
   },
   {
     "id": "nbg-bederova",
@@ -171,9 +258,17 @@
     "email": "",
     "inhaber": "Inna Bederova",
     "zeiten": "",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B100122854/aenderungsschneiderei-bederova.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060690120B100122854/aenderungsschneiderei-bederova.html",
+    "beschreibung": "Änderungsschneiderei von Inna Bederova in der Johannisstraße in St. Johannis. Öffnungszeiten und Bewertungen sind online nicht hinterlegt. Ein älterer Eintrag nennt die Burgschmietstraße, vermutlich ein früherer Standort.",
+    "leistungen": [
+      "Änderungen",
+      "Maßschneiderei"
+    ],
+    "online": "Nur Branchenbücher.",
+    "ansatz": "St. Johannis hat viel Kaufkraft und im Netz kaum Konkurrenz für Schneidereien. Eine Seite mit Leistungen und Öffnungszeiten.",
+    "bewertung": "",
+    "hinweis": "Alter Eintrag Burgschmietstraße: aktuelle Adresse bestätigen."
   },
   {
     "id": "nbg-jaeger",
@@ -187,9 +282,18 @@
     "email": "",
     "inhaber": "Thomas Jaeger",
     "zeiten": "",
-    "info": "4,7 Sterne bei 34 Bewertungen: gute Bewertungen, aber keine eigene Seite.",
     "website": "keine",
-    "quelle": "https://web2.cylex.de/firma-home/schuhmacher-und-schluesseldienst-thomas-jaeger-im-edeka-u1-13842778.html"
+    "quelle": "https://web2.cylex.de/firma-home/schuhmacher-und-schluesseldienst-thomas-jaeger-im-edeka-u1-13842778.html",
+    "beschreibung": "Schuhmacher und Schlüsseldienst von Thomas Jaeger im EDEKA-Markt U1 an der Sulzbacher Straße. Er repariert Schuhe und fertigt Schlüssel an, laut Kunden schnell und handwerklich sauber.",
+    "leistungen": [
+      "Schuhreparatur",
+      "Schlüssel nachmachen",
+      "Schlüsseldienst"
+    ],
+    "online": "Cylex, nicelocal, dasistnah, regiohandwerker.",
+    "ansatz": "Top bewertet, aber im Supermarkt versteckt. Wer „Schuhmacher Nürnberg“ sucht, landet bei Mitbewerbern mit Website. Eine Seite mit Leistungen, Preisen und dem Hinweis „im EDEKA U1“.",
+    "bewertung": "4,7 Sterne bei 34 Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-ktn",
@@ -203,9 +307,22 @@
     "email": "",
     "inhaber": "Hasan Sucu",
     "zeiten": "Mo–Fr 8–18:30, Sa 9–14",
-    "info": "Partner von „Profi Service Werkstatt“, sonst nur Facebook.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B102128065/kfz-technik-nord.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B102128065/kfz-technik-nord.html",
+    "beschreibung": "Freie Kfz-Meisterwerkstatt von Hasan Sucu in der Tiefenfeldstraße (Klingenhof), Partner der Kette „Profi Service Werkstatt“. Geöffnet Mo–Fr 8–12 und 12:30–18:30, Sa 9–14 Uhr. Kunden loben, dass nur gemacht wird, was nötig ist, dass Reparaturen schnell gehen und das ganze Team freundlich ist.",
+    "leistungen": [
+      "Reparatur & Inspektion",
+      "Karosserie & Lack",
+      "Autoglas",
+      "Reifenservice",
+      "Smart Repair",
+      "TÜV",
+      "Tuning & HiFi"
+    ],
+    "online": "Facebook-Seite, Profi-Service-Werkstatt-Portal, autoplenum, 11880.",
+    "ansatz": "Sehr viele sehr gute Bewertungen, aber nur Facebook. Eine eigene Seite mit Leistungen, Terminanfrage und den Bewertungen holt Kunden, die nach „Werkstatt Nürnberg Nord“ suchen.",
+    "bewertung": "4,8 Sterne bei rund 158 Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-hh-autoservice",
@@ -219,9 +336,21 @@
     "email": "",
     "inhaber": "Bernd Hirschmann & Horst Hahn (GbR)",
     "zeiten": "Mo–Do 8–16:30, Fr 8–15:30",
-    "info": "Reparatur, Unfall, Karosserie, Klima, AU/TÜV, Reifen.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B33473124/h-h-autoservice-bernd-hirschmann.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B33473124/h-h-autoservice-bernd-hirschmann.html",
+    "beschreibung": "Kfz-Werkstatt in Zerzabelshof, geführt von Bernd Hirschmann und Horst Hahn als GbR. Repariert werden Fahrzeuge aller Marken, inklusive Unfallschäden, Verschleißteile, Karosserie, Klimaservice, AU und TÜV, Reifen und Scheiben. Geöffnet Mo–Do 8–12 und 12:30–16:30, Fr bis 15:30 Uhr.",
+    "leistungen": [
+      "Reparatur aller Marken",
+      "Unfallinstandsetzung",
+      "Karosserie",
+      "Klimaservice",
+      "AU/TÜV",
+      "Reifen & Scheiben"
+    ],
+    "online": "Das Örtliche, Gelbe Seiten, autoplenum, Cylex.",
+    "ansatz": "Klassischer Meisterbetrieb. Eine Seite mit Leistungen und Online-Terminanfrage bringt jüngere Kunden, die nicht mehr im Telefonbuch suchen.",
+    "bewertung": "",
+    "hinweis": ""
   },
   {
     "id": "nbg-savas-kfz",
@@ -235,9 +364,20 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Fr 8:30–18, Sa 8:30–13",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B100174654/savas-kfz-werkstatt.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/012080446B100174654/savas-kfz-werkstatt.html",
+    "beschreibung": "Kfz-Technikerbetrieb in der Wirthstraße (Galgenhof), der laut Carrando auch mit Autos handelt. Das Angebot reicht von Reparaturen über Service- und Prüfintervalle bis zu Montage- und Installationsarbeiten. Geöffnet Mo–Fr 8:30–18, Sa 8:30–13 Uhr. Die Bewertungen loben das Preis-Leistungs-Verhältnis und die kostenlose Montage von Winterreifen.",
+    "leistungen": [
+      "Reparaturen",
+      "Inspektion & Service",
+      "Montage",
+      "Reifenwechsel",
+      "Autohandel"
+    ],
+    "online": "Cylex, dienstkatalog, carrando (Autohandel), 11880.",
+    "ansatz": "Werkstatt plus Autohandel: Eine Website kann beides zeigen, Leistungen und aktuelle Fahrzeuge.",
+    "bewertung": "5 Sterne (2 Bewertungen)",
+    "hinweis": ""
   },
   {
     "id": "nbg-malter",
@@ -251,9 +391,19 @@
     "email": "",
     "inhaber": "Norbert Malter (Malermeister)",
     "zeiten": "",
-    "info": "Malen, Tapezieren, Lasur- und Wischtechnik, Fassaden. 5 Sterne.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060693296B100460060/norbert-malter-malerbetrieb.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060693296B100460060/norbert-malter-malerbetrieb.html",
+    "beschreibung": "Malermeister Norbert Malter aus Boxdorf. Er und sein Team streichen und tapezieren nach Kundenwunsch, mit klassischen Methoden ebenso wie mit Lasur- und Wischtechniken, und übernehmen Fassadenanstriche.",
+    "leistungen": [
+      "Innenanstrich",
+      "Tapezieren",
+      "Lasur- & Wischtechnik",
+      "Fassaden"
+    ],
+    "online": "sellwerk, Gelbe Seiten, handwerker24, maler-regional.",
+    "ansatz": "Handwerk lebt von Referenzen. Eine Seite mit Vorher-nachher-Fotos und Anfrageformular.",
+    "bewertung": "5 Sterne (2 Bewertungen)",
+    "hinweis": ""
   },
   {
     "id": "nbg-schwab",
@@ -267,9 +417,20 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Familienbetrieb seit 1913. Hat eine E-Mail-Adresse, daher vielleicht eine alte Website: vor dem Anruf kurz googeln.",
     "website": "unklar",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060693517B28227164/willi-schwab-malereibetrieb.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060693517B28227164/willi-schwab-malereibetrieb.html",
+    "beschreibung": "Traditions-Malerbetrieb in der Merkelsgasse, gegründet 1913 und seit 1973 in Familienhand, eingetragen als Malereibetrieb Willi Schwab e.K. (HRA 7064, Amtsgericht Nürnberg). Schwerpunkte sind Malerarbeiten, Raumgestaltung sowie Fenster-, Fassaden- und Betonsanierung.",
+    "leistungen": [
+      "Malerarbeiten",
+      "Raumgestaltung",
+      "Fenstersanierung",
+      "Fassadensanierung",
+      "Betonsanierung"
+    ],
+    "online": "Viele Branchenbücher. Hat eine E-Mail-Adresse, eine eigene Website war nicht zu finden.",
+    "ansatz": "Über 110 Jahre Firmengeschichte lassen sich online gut erzählen. Falls es doch eine alte Seite gibt: einen Relaunch anbieten.",
+    "bewertung": "",
+    "hinweis": "Vor dem Anruf kurz googeln, ob es eine alte Website gibt."
   },
   {
     "id": "nbg-buchner",
@@ -283,9 +444,20 @@
     "email": "",
     "inhaber": "Dieter Buchner (Bodenlegermeister)",
     "zeiten": "",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060691660B107433969/dieter-buchner.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060691660B107433969/dieter-buchner.html",
+    "beschreibung": "Mosaik- und Fliesenverlegung von Bodenlegermeister Dieter Buchner in der Schoppershofstraße. Er verlegt Fliesen, Feinsteinzeug, Naturstein und Mosaik innen und außen und berät bei der Materialwahl. Laut Eintrag verwendet er nur hochwertige Materialien und Werkzeuge.",
+    "leistungen": [
+      "Fliesen",
+      "Feinsteinzeug",
+      "Naturstein",
+      "Mosaik",
+      "Innen & außen"
+    ],
+    "online": "Gelbe Seiten, fliesenleger.net, mein-fliesenleger-profi, 11880.",
+    "ansatz": "Bei Bädern und Mosaik entscheiden Bilder. Eine Referenzgalerie überzeugt mehr als jeder Verzeichniseintrag.",
+    "bewertung": "Noch keine Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-hausmeister-koch",
@@ -299,9 +471,22 @@
     "email": "Hausmeisterdienst.koch@googlemail.com",
     "inhaber": "Umidjon Koch",
     "zeiten": "Mo–Sa 7–19:30",
-    "info": "Hausmeister, Winterdienst, Entrümpelung, Reinigung. Nutzt eine Googlemail-Adresse.",
     "website": "keine",
-    "quelle": "https://www.dasoertliche.de/Themen/Umidjon-Koch-Hausmeisterdienste-N%C3%BCrnberg-Glockenhof-Keplerstr"
+    "quelle": "https://www.dasoertliche.de/Themen/Umidjon-Koch-Hausmeisterdienste-N%C3%BCrnberg-Glockenhof-Keplerstr",
+    "beschreibung": "Hausmeisterdienst von Umidjon Koch in der Keplerstraße (Glockenhof), erreichbar Mo–Sa 7–19:30 Uhr. Das Angebot ist breit: Hausmeister- und Hauswartung, Winterdienst, Schlüsseldienst, Wohnungsauflösungen, Abbruch, Reinigung, Glasreinigung, Grünanlagenpflege und Gebäudereinigung.",
+    "leistungen": [
+      "Hauswartung",
+      "Winterdienst",
+      "Wohnungsauflösung",
+      "Abbruch",
+      "Gebäude- & Glasreinigung",
+      "Grünpflege",
+      "Schlüsseldienst"
+    ],
+    "online": "Das Örtliche, Gelbe Seiten, golocal. Kontakt nur über eine Googlemail-Adresse.",
+    "ansatz": "Viele Leistungen, nach denen gezielt gesucht wird (Entrümpelung, Winterdienst). Eine eigene Domain mit passender E-Mail wirkt bei Hausverwaltungen seriöser als Googlemail.",
+    "bewertung": "2 Bewertungen auf golocal",
+    "hinweis": ""
   },
   {
     "id": "nbg-beilhardt",
@@ -315,9 +500,18 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Medizinische Fußpflege. Online nur ein Doctolib-Profil.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631810B101051777/fusspflege-beilhardt.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631810B101051777/fusspflege-beilhardt.html",
+    "beschreibung": "Praxis für medizinische Fußpflege in Mögeldorf an der Laufamholzstraße. Angeboten werden medizinische Fußbehandlungen, Nagelkorrektur mit Spangentechnik und Maniküre. Termine lassen sich über Doctolib buchen.",
+    "leistungen": [
+      "Medizinische Fußpflege",
+      "Nagelspangen",
+      "Maniküre"
+    ],
+    "online": "Doctolib-Profil, golocal, 11880.",
+    "ansatz": "Die Online-Buchung gibt es schon, aber keine Seite, die Leistungen und Preise erklärt. Eine kleine Website, die auf die Doctolib-Buchung verlinkt.",
+    "bewertung": "",
+    "hinweis": "Öffnungszeiten sind nicht veröffentlicht."
   },
   {
     "id": "nbg-rosalia",
@@ -331,9 +525,19 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Teils auch unter Bucher Str. 17 gelistet.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631810B100722979/fusspflege-rosalia.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110631810B100722979/fusspflege-rosalia.html",
+    "beschreibung": "Kosmetische Fußpflege in der Willstraße in Gostenhof. Das Angebot umfasst Nagelpflege, Hornhautentfernung, Fußbäder und Nail Art für die Füße. Öffnungszeiten, Preise und Bewertungen sind online nicht zu finden.",
+    "leistungen": [
+      "Nagelpflege",
+      "Hornhautentfernung",
+      "Fußbad",
+      "Nail Art"
+    ],
+    "online": "Nur Branchenbücher.",
+    "ansatz": "Preise und Termine gibt es nur am Telefon. Eine Seite mit Preisliste und Terminanfrage.",
+    "bewertung": "",
+    "hinweis": "Zweite Adresse im Umlauf: Bucher Str. 17 (St. Johannis). Aktuellen Standort bestätigen."
   },
   {
     "id": "nbg-topnails",
@@ -347,9 +551,21 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Fr 9–19, Sa 9–17",
-    "info": "Nägel, Kosmetik, Wimpern. Nur Instagram @topnailsnuernberg.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110633838B108234611/topnails.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110633838B108234611/topnails.html",
+    "beschreibung": "Nagel- und Kosmetikstudio in der Theresienstraße in der Altstadt, auch unter „Kosmetik Luna“ bekannt. Neben Nägeln gibt es Gesichtsbehandlungen, Massage, Fußpflege, Maniküre und Wimpern. Geöffnet Mo–Fr 9–19, Sa 9–17 Uhr. Termine laufen über Telefon und WhatsApp.",
+    "leistungen": [
+      "Nageldesign",
+      "Maniküre",
+      "Gesichtsbehandlung",
+      "Massage",
+      "Fußpflege",
+      "Wimpern"
+    ],
+    "online": "Instagram @topnailsnuernberg, kennstdueinen, 11880.",
+    "ansatz": "Instagram ist da, aber keine Seite mit Preisen und Buchung. Eine Website mit Preisliste und WhatsApp-Knopf.",
+    "bewertung": "",
+    "hinweis": ""
   },
   {
     "id": "nbg-elena-m",
@@ -363,9 +579,21 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Fr 10–17, Sa 10–14",
-    "info": "Die alte Cylex-Minisite ist abgeschaltet, seitdem gibt es keine Website mehr.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110630625B102408194/kosmetikstudio-elena-m.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/110630625B102408194/kosmetikstudio-elena-m.html",
+    "beschreibung": "Kosmetikstudio in Langwasser. Angeboten werden Gesichtsbehandlungen, Haarentfernung mit Warmwachs für Frauen, kosmetische Fußpflege, Maniküre, Nagellack und French, Shellac, Augenbrauen zupfen und färben, Wimpern färben und Wimpernverlängerung. Geöffnet Mo–Fr 10–17, Sa 10–14 Uhr.",
+    "leistungen": [
+      "Gesichtsbehandlung",
+      "Warmwachs",
+      "Fußpflege",
+      "Maniküre & Shellac",
+      "Augenbrauen",
+      "Wimpern"
+    ],
+    "online": "Die frühere Cylex-Minisite ist abgeschaltet („End of Life“). Seitdem nur Verzeichniseinträge.",
+    "ansatz": "Sie hatte schon einmal eine Mini-Website, die weggefallen ist. Aufhänger: „Ihre alte Seite ist offline, ich baue Ihnen eine neue.“",
+    "bewertung": "",
+    "hinweis": "meinestadt nennt Trebnitzer Str. 76: Adresse bestätigen."
   },
   {
     "id": "nbg-ballerina",
@@ -379,25 +607,42 @@
     "email": "",
     "inhaber": "",
     "zeiten": "täglich ca. 11:30–21:30",
-    "info": "Sehr beliebt: 4,4 Sterne bei rund 600 Bewertungen, aber nur Uber Eats und Facebook.",
     "website": "keine",
-    "quelle": "https://www.yelp.com/biz/ballerina-d%C3%B6ner-imbi%C3%9F-n%C3%BCrnberg"
+    "quelle": "https://www.yelp.com/biz/ballerina-d%C3%B6ner-imbi%C3%9F-n%C3%BCrnberg",
+    "beschreibung": "Beliebter Döner-Imbiss am Äußeren Laufer Platz in der Altstadt mit türkischen Spezialitäten und selbst gemachtem Döner. Gelobt werden frische Zutaten, große Portionen und freundliches Personal, die Preise liegen bei 1–10 €. Täglich geöffnet, etwa 11:30–21:30 Uhr.",
+    "leistungen": [
+      "Döner Kebap",
+      "Türkische Spezialitäten",
+      "Lieferung über Uber Eats"
+    ],
+    "online": "Uber Eats, Facebook, Yelp, Speisekarten-Portale.",
+    "ansatz": "Bei so vielen Bewertungen lohnt eine eigene Seite mit Speisekarte und Direktbestellung. Jede Bestellung, die nicht über Uber Eats läuft, spart die Plattformprovision.",
+    "bewertung": "4,4 Sterne bei rund 600 Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-antalya",
     "stadt": "Nürnberg",
     "name": "Imbiss Antalya",
     "branche": "Imbiss",
-    "adresse": "Dombühler Str. 9, 90449 Nürnberg",
+    "adresse": "Dombühler Str. 60 (Röthenbach-Center), 90451 Nürnberg",
     "stadtteil": "Röthenbach",
     "telefon": "0911 2557950",
     "telefon2": "",
     "email": "",
     "inhaber": "",
-    "zeiten": "täglich 8:30–22",
-    "info": "Yelp nennt Hausnummer 60: im Gespräch bestätigen.",
+    "zeiten": "Mo–Sa 8:30–22, So 9:30–22",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071366134B101909860/imbiss-antalya.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071366134B101909860/imbiss-antalya.html",
+    "beschreibung": "Türkischer Imbiss im Röthenbach-Center direkt am U-Bahnhof Röthenbach. Die Spezialitäten werden täglich frisch im Haus zubereitet. Geöffnet Mo–Sa 8:30–22, So 9:30–22 Uhr. Gelobt werden frische Zutaten, saftiger Döner und freundliches Personal, kritisiert wird die einfache Einrichtung.",
+    "leistungen": [
+      "Döner",
+      "Türkische Gerichte"
+    ],
+    "online": "Eine Unterseite auf der Website des Röthenbach-Centers, Yelp, Restaurant-Portale.",
+    "ansatz": "Bisher nur eine Unterseite beim Einkaufszentrum. Eine eigene Seite mit Speisekarte und Mittagsangebot für Pendler vom U-Bahnhof.",
+    "bewertung": "Gemischte Bewertungen",
+    "hinweis": "Adresse widersprüchlich: 11880 sagt Dombühler Str. 9 (90449), Yelp und Röthenbach-Center Dombühler Str. 60 (90451)."
   },
   {
     "id": "nbg-karakaya",
@@ -411,9 +656,20 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Sa 8–22, So 11–22",
-    "info": "Nur ein Wolt-Profil. 11880 nennt Hausnummer 101.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071366134B105452142/karakaya-dueruem-doener.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071366134B105452142/karakaya-dueruem-doener.html",
+    "beschreibung": "Döner-Imbiss an der Sulzbacher Straße in Rennweg. Auf der Karte stehen Döner, Dürüm, Lahmacun, Döner-Teller, Salate, Reis- und Nudelgerichte, auch vegetarisch. Gelobt werden der selbst gemachte Teig und gut gefüllter Dürüm, einzelne Bewertungen kritisieren schwankende Qualität. Geöffnet Mo–Sa 8–22, So 11–22 Uhr.",
+    "leistungen": [
+      "Döner & Dürüm",
+      "Lahmacun",
+      "Teller & Salate",
+      "Vegetarisch",
+      "Lieferung über Wolt"
+    ],
+    "online": "Wolt, Tripadvisor, Restaurant-Portale.",
+    "ansatz": "Bestellungen laufen über Wolt mit Provision. Eine eigene Seite mit Speisekarte und Telefon-Bestellung.",
+    "bewertung": "Google ca. 4,5 Sterne",
+    "hinweis": "Hausnummer 84 oder 101: im Gespräch bestätigen."
   },
   {
     "id": "nbg-tricolore",
@@ -427,9 +683,18 @@
     "email": "",
     "inhaber": "",
     "zeiten": "täglich 9–22",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/B108815043/pizzeria-tricolore.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/B108815043/pizzeria-tricolore.html",
+    "beschreibung": "Pizzeria an der Rothenburger Straße in Sündersbühl mit italienischer Küche und Lieferservice. Geöffnet täglich 9–22 Uhr. Online gibt es weder Speisekarte noch Bewertungen, nur Verzeichniseinträge.",
+    "leistungen": [
+      "Pizza & Pasta",
+      "Italienische Küche",
+      "Lieferservice"
+    ],
+    "online": "Nur 11880, Cylex, marktplatz-mittelstand.",
+    "ansatz": "Ein Lieferdienst ohne auffindbare Speisekarte verliert Bestellungen an Lieferando und Co. Eine Seite mit Speisekarte und Telefon-Bestellknopf.",
+    "bewertung": "Noch keine Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-brandenburger",
@@ -443,9 +708,20 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Historisches Renaissance-Wirtshaus mit Hochzeiten, Rittermahl und Krimi-Dinner. Ohne Website entgehen ihm Event-Anfragen.",
     "website": "keine",
-    "quelle": "https://www.yelp.de/biz/brandenburger-wirtshaus-n%C3%BCrnberg"
+    "quelle": "https://www.yelp.de/biz/brandenburger-wirtshaus-n%C3%BCrnberg",
+    "beschreibung": "Historisches fränkisches Wirtshaus in einem Renaissance-Gebäude in Reichelsdorf, rund 700 m von der S-Bahn Reichelsdorf. Die Küche ist fränkisch mit mediterranen Einflüssen (Schnitzel, Bratwürste, Eintöpfe aus regionalen Zutaten). Das Haus richtet Hochzeiten, Geburtstage, Familien- und Firmenfeiern aus und bietet Rittermahle mit kostümierten Rittern, Zauber-Dinner und Krimi-Dinner an. Menüpreise liegen etwa bei 40–50 €.",
+    "leistungen": [
+      "Fränkische Küche",
+      "Hochzeiten & Feiern",
+      "Firmenevents",
+      "Rittermahl",
+      "Krimi- & Zauber-Dinner"
+    ],
+    "online": "Yelp, Tripadvisor, speisekarte.de, Locationguide24, hochzeits-location.info.",
+    "ansatz": "Eventlocation ohne Website: Brautpaare und Firmen wollen Bilder, Pakete und ein Anfrageformular sehen. Der stärkste Fall auf der Liste.",
+    "bewertung": "",
+    "hinweis": ""
   },
   {
     "id": "nbg-rupprecht",
@@ -459,9 +735,18 @@
     "email": "",
     "inhaber": "Klaus Rupprecht",
     "zeiten": "Mo–Do 7–16:30, Fr 7–14",
-    "info": "Altbausanierung, Sprechanlagen. Einzugsgebiet Zabo und Mögeldorf.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060691303B26364476/elektro-rupprecht-gmbh.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/060691303B26364476/elektro-rupprecht-gmbh.html",
+    "beschreibung": "Elektro-Meisterbetrieb in Zerzabelshof, geführt von Klaus Rupprecht als GmbH. Schwerpunkte sind Elektroinstallation, Altbausanierung und Sprechanlagen, vor allem in Zabo, Mögeldorf und Umgebung. Geöffnet Mo–Do 7–16:30, Fr 7–14 Uhr. Der Betrieb sucht über ein Handwerker-Portal auch Mitarbeiter.",
+    "leistungen": [
+      "Elektroinstallation",
+      "Altbausanierung",
+      "Sprech- & Klingelanlagen"
+    ],
+    "online": "sellwerk, Das Örtliche, Gelbe Seiten, Stellenportal mitarbeiterimhandwerk.",
+    "ansatz": "Handwerksbetriebe suchen Kunden und Fachkräfte. Eine Website mit Leistungen und Karriereseite hilft bei beidem.",
+    "bewertung": "4,5 Sterne (Sellwerk)",
+    "hinweis": ""
   },
   {
     "id": "nbg-ziebra",
@@ -475,9 +760,17 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "Innenausbau.",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/292242654B26702306/ziebra-schreinerei-gmbh.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/292242654B26702306/ziebra-schreinerei-gmbh.html",
+    "beschreibung": "Schreinerei (GmbH) in der Peter-Henlein-Straße in Steinbühl mit Schwerpunkt Innenausbau. Referenzen, Öffnungszeiten oder Bewertungen sind online nicht zu finden.",
+    "leistungen": [
+      "Innenausbau",
+      "Schreinerarbeiten"
+    ],
+    "online": "Nur Branchenbücher (11880, blauarbeit, Stadtbranchenbuch).",
+    "ansatz": "Innenausbau verkauft sich über Fotos fertiger Projekte. Eine Referenzseite zeigt, was die Schreinerei kann.",
+    "bewertung": "Noch keine Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-meischner",
@@ -489,11 +782,19 @@
     "telefon": "0911 351745",
     "telefon2": "",
     "email": "",
-    "inhaber": "",
+    "inhaber": "Barbara Meischner (laut Branchenbuch)",
     "zeiten": "Mo–Fr 8–18, Sa 9–13",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/061324346B50033088/textilreinigung-meischner.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/061324346B50033088/textilreinigung-meischner.html",
+    "beschreibung": "Textilreinigung und Wäscherei in der Schillerstraße (Maxfeld/Nordstadt), betrieben als Textilreinigung Meischner UG. Geöffnet Mo–Fr 8–18, Sa 9–13 Uhr.",
+    "leistungen": [
+      "Textilreinigung",
+      "Wäscherei"
+    ],
+    "online": "Nur Branchenbücher.",
+    "ansatz": "Eine Reinigung lebt von Kundschaft aus dem Viertel. Eine Seite mit Preisliste (Hemd, Anzug, Bettdecke) und Öffnungszeiten.",
+    "bewertung": "Noch keine Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-mossner",
@@ -507,9 +808,19 @@
     "email": "Blumen.Mossner@t-online.de",
     "inhaber": "",
     "zeiten": "Mo–Fr 7:30–18, Sa 8–13, So 10–12",
-    "info": "Fleurop-Partner, Hochzeits- und Trauerfloristik. Nur Instagram.",
     "website": "keine",
-    "quelle": "https://www.gelbeseiten.de/gsbiz/575b404c-1e23-41f7-b595-0074bbec4d2f"
+    "quelle": "https://www.gelbeseiten.de/gsbiz/575b404c-1e23-41f7-b595-0074bbec4d2f",
+    "beschreibung": "Blumenfachgeschäft (GmbH) in der Berckhauserstraße in Maxfeld mit Fleurop-Service. Spezialisiert auf individuell gebundene Sträuße für Jubiläen, Geburtstage und Valentinstag, dazu Hochzeitsfloristik, Trauerfloristik und Grabschmuck. Geöffnet Mo–Fr 7:30–18, Sa 8–13, So 10–12 Uhr.",
+    "leistungen": [
+      "Sträuße & Gestecke",
+      "Hochzeitsfloristik",
+      "Trauerfloristik & Grabschmuck",
+      "Fleurop-Versand"
+    ],
+    "online": "Instagram @blumenmossner, Fleurop-Partnerseite, Yelp. E-Mail über t-online.",
+    "ansatz": "Hochzeits- und Trauerfloristik werden online angefragt. Eine Seite mit Galerie und Anfrageformular, dazu eine E-Mail mit eigener Domain statt t-online.",
+    "bewertung": "",
+    "hinweis": ""
   },
   {
     "id": "nbg-engelhardt",
@@ -523,9 +834,18 @@
     "email": "",
     "inhaber": "",
     "zeiten": "Mo–Fr 8–18, Sa 8–13, So 10–12",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/170210816B53758459/engelhardt-blumen-blumengeschaeft.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/170210816B53758459/engelhardt-blumen-blumengeschaeft.html",
+    "beschreibung": "Blumengeschäft in der Maxfeldstraße (Maxfeld) mit Schnittblumen und Floristik, auch sonntags 10–12 Uhr geöffnet (Mo–Fr 8–18, Sa 8–13 Uhr).",
+    "leistungen": [
+      "Schnittblumen",
+      "Floristik",
+      "Sonntags geöffnet"
+    ],
+    "online": "Nur Branchenbücher und Bewertungsportale.",
+    "ansatz": "Sonntags geöffnet ist ein Argument, das online niemand sieht. Eine Seite mit Öffnungszeiten und Sortiment, dazu ein gepflegtes Google-Profil gegen das mittelmäßige Bewertungsbild.",
+    "bewertung": "ca. 3,6 Sterne bei rund 54 Bewertungen",
+    "hinweis": ""
   },
   {
     "id": "nbg-hartmann",
@@ -539,8 +859,15 @@
     "email": "",
     "inhaber": "",
     "zeiten": "",
-    "info": "",
     "website": "keine",
-    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071213662B29480350/metzgerei-hans-hartmann.html"
+    "quelle": "https://www.11880.com/branchenbuch/nuernberg-mittelfranken/071213662B29480350/metzgerei-hans-hartmann.html",
+    "beschreibung": "Metzgerei in Ziegelstein am Bierweg 76, der Eingang liegt laut einem Eintrag an der Uttenreuther Straße 2b. Öffnungszeiten, Sortiment und Bewertungen stehen nirgends online, es gibt nur Verzeichniseinträge.",
+    "leistungen": [
+      "Fleisch & Wurst"
+    ],
+    "online": "Nur Branchenbücher und franken-4all.",
+    "ansatz": "Nürnberger Mitbewerber wie Freyberger oder Steiner haben Websites mit Sortiment und Mittagstisch. Eine Seite mit Wochenangeboten und Öffnungszeiten.",
+    "bewertung": "",
+    "hinweis": "Öffnungszeiten unbekannt."
   }
 ]
