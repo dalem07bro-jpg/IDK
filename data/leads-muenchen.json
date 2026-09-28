@@ -700,5 +700,78 @@
     "ansatz": "Falls der Laden noch läuft, ist er im Netz komplett unsichtbar. Eine einfache Seite mit Öffnungszeiten.",
     "bewertung": "",
     "hinweis": "Letzte Online-Spur von 2017: zuerst klären, ob das Atelier noch geöffnet ist."
+  },
+  {
+    "id": "mue-x-schmittbiel",
+    "stadt": "München",
+    "name": "Schmittbiel Uhrmachermeisterin",
+    "branche": "Uhrmacher",
+    "adresse": "Schönbrunner Str. 8, 81245 München",
+    "stadtteil": "Aubing",
+    "telefon": "089 8631407",
+    "telefon2": "",
+    "email": "",
+    "inhaber": "",
+    "zeiten": "",
+    "website": "ungeprüft",
+    "quelle": "https://www.11880.com/branchenbuch/muenchen/181725450B52000798/schmittbiel-uhrmachermeisterin.html",
+    "beschreibung": "Uhrmachermeisterin in der Schönbrunner Straße in Aubing. Meisterbetrieb für Uhrenreparatur.",
+    "leistungen": [
+      "Uhrenreparatur",
+      "Revision",
+      "Batteriewechsel"
+    ],
+    "online": "11880-Eintrag.",
+    "ansatz": "Eine Meisterin im Uhrmacherhandwerk ist selten und ein starkes Verkaufsargument. Eine Seite mit Leistungen und „Meisterbetrieb“ ganz oben.",
+    "bewertung": "",
+    "hinweis": "Website noch nicht einzeln geprüft: vor dem Anruf kurz googeln (Link „Google prüfen“)."
+  },
+  {
+    "id": "mue-x-schuh-perlach",
+    "stadt": "München",
+    "name": "Schuhreparatur Ottobrunner Straße",
+    "branche": "Schuhmacher",
+    "adresse": "Ottobrunner Str. 142, 81737 München",
+    "stadtteil": "Perlach",
+    "telefon": "089 32490319",
+    "telefon2": "",
+    "email": "",
+    "inhaber": "",
+    "zeiten": "",
+    "website": "ungeprüft",
+    "quelle": "https://www.dasoertliche.de/Themen/Schuhreparatur/M%C3%BCnchen.html",
+    "beschreibung": "Schuhreparatur an der Ottobrunner Straße in Perlach, bei Das Örtliche mit Adresse und Telefon eingetragen.",
+    "leistungen": [
+      "Schuhreparatur",
+      "Absätze & Sohlen"
+    ],
+    "online": "Nur ein Telefonbuch-Eintrag.",
+    "ansatz": "Eine Seite mit Preisliste (Absatz, Sohle, Schlüssel) holt Kunden aus der Nachbarschaft.",
+    "bewertung": "",
+    "hinweis": "Website noch nicht einzeln geprüft: vor dem Anruf kurz googeln (Link „Google prüfen“). Name im Verzeichnis nicht angezeigt, am Telefon erfragen."
+  },
+  {
+    "id": "mue-x-schuh-altstadt",
+    "stadt": "München",
+    "name": "Schuhreparatur Herzog-Wilhelm-Straße",
+    "branche": "Schuhmacher",
+    "adresse": "Herzog-Wilhelm-Str. 27, 80331 München",
+    "stadtteil": "Altstadt",
+    "telefon": "089 2604284",
+    "telefon2": "",
+    "email": "",
+    "inhaber": "",
+    "zeiten": "",
+    "website": "ungeprüft",
+    "quelle": "https://www.dasoertliche.de/Themen/Schuhreparatur/M%C3%BCnchen.html",
+    "beschreibung": "Schuhreparatur in der Herzog-Wilhelm-Straße nahe Sendlinger Tor, bei Das Örtliche mit Festnetznummer eingetragen.",
+    "leistungen": [
+      "Schuhreparatur",
+      "Absätze & Sohlen"
+    ],
+    "online": "Nur ein Telefonbuch-Eintrag.",
+    "ansatz": "Innenstadtlage mit viel Laufkundschaft. Eine Seite und ein Google-Profil mit Preisen und Zeiten.",
+    "bewertung": "",
+    "hinweis": "Website noch nicht einzeln geprüft: vor dem Anruf kurz googeln (Link „Google prüfen“). Name im Verzeichnis nicht angezeigt, am Telefon erfragen."
   }
 ]

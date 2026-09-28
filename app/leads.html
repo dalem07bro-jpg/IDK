@@ -114,7 +114,9 @@ a { color: inherit; }
   text-wrap: balance;
 }
 .brand h1 .dot { color: var(--accent); }
-.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tabs { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+@media (min-width: 700px) and (hover: hover) { .tabs { flex-wrap: wrap; overflow-x: visible; } }
 .tab {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -123,6 +125,8 @@ a { color: inherit; }
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 .tab[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .tab:disabled { cursor: default; color: var(--ink-3); background: transparent; border-style: dashed; }
@@ -194,6 +198,18 @@ a { color: inherit; }
 
 /* Lead-Karten */
 .list { display: grid; gap: 10px; }
+.city-head {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 14px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.city-head:first-child { margin-top: 0; }
+.city-head small { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink-3); }
 .lead {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -303,6 +319,7 @@ a { color: inherit; }
 }
 .badge.none::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--s-interesse); }
 .badge.unsure::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--s-nicht_erreicht); }
+.badge.unchecked { border: 1px dashed var(--ink-3); background: transparent; color: var(--ink-2); }
 .badge.due { background: var(--accent-soft); color: var(--due); }
 .checks a { color: var(--ink-2); }
 
@@ -374,8 +391,8 @@ a { color: inherit; }
   <div class="top-inner">
     <div class="brand">
       <h1>Website-Leads<span class="dot">.</span></h1>
-      <nav class="tabs" id="tabs" aria-label="Region"></nav>
     </div>
+    <nav class="tabs" id="tabs" aria-label="Stadt"></nav>
     <div class="stats" id="stats" role="group" aria-label="Status filtern"></div>
   </div>
 </header>
@@ -396,9 +413,10 @@ a { color: inherit; }
   </details>
 
   <div class="tools">
-    <input type="search" id="q" placeholder="Name, Straße oder Stadtteil suchen" aria-label="Suchen">
+    <input type="search" id="q" placeholder="Name, Stadt, Straße oder Stadtteil suchen" aria-label="Suchen">
     <select id="branche" aria-label="Branche"></select>
     <select id="sort" aria-label="Sortierung">
+      <option value="stadt">Sortiert: Stadt</option>
       <option value="status">Sortiert: nächster Anruf</option>
       <option value="branche">Sortiert: Branche</option>
       <option value="stadtteil">Sortiert: Stadtteil</option>
@@ -411,7 +429,7 @@ a { color: inherit; }
   <section class="list" id="list" aria-live="polite"></section>
   <div class="empty" id="empty">Die Leads werden geladen …</div>
 
-  <p class="foot">Daten aus öffentlichen Branchenbüchern (11880, Gelbe Seiten, Das Örtliche, Yelp u. a.), Stand 28.09.2026. „Keine Website gefunden“ heißt: Bei der Websuche tauchte keine eigene Domain auf. Vor dem Anruf kurz über „Google prüfen“ gegenchecken.</p>
+  <p class="foot">Daten aus öffentlichen Branchenbüchern (11880, Gelbe Seiten, Das Örtliche, Yelp u. a.), Stand 28.09.2026. „Keine Website gefunden“ heißt: Bei der Websuche nach dem Betrieb tauchte keine eigene Domain auf. „Website ungeprüft“ heißt: Der Betrieb stammt aus einem Branchenbuch, wurde aber noch nicht einzeln gesucht. Vor dem Anruf kurz über „Google prüfen“ gegenchecken.</p>
 </main>
 
 <div class="toast" id="toast" role="status" hidden></div>
@@ -442,16 +460,17 @@ a { color: inherit; }
     { key: "kein_interesse", label: "Kein Interesse" }
   ];
   var STATUS_RANK = { rueckruf: 0, offen: 1, nicht_erreicht: 2, interesse: 3, termin: 4, kunde: 5, kein_interesse: 6 };
-  var PLANNED = ["München", "Bayern"];
-  var PREF_KEY = "leads-prefs-v1";
+  var ALL = "_all";
+  var PREF_KEY = "leads-prefs-v2";
 
-  var state = { city: "Nürnberg", q: "", branche: "", status: "", sort: "status" };
+  var state = { city: ALL, q: "", branche: "", status: "", sort: "stadt" };
   var leads = [];
   var db = null;
   var readOnly = false;
   var cards = new Map();
   var queues = new Map();
   var noteTimers = new Map();
+  var heads = new Map();
 
   var $ = function (id) { return document.getElementById(id); };
   var listEl = $("list"), emptyEl = $("empty"), countEl = $("count");
@@ -681,6 +700,7 @@ a { color: inherit; }
     r.name.textContent = l.name || "Ohne Namen";
     fill(r.meta, [
       el("span", { class: "tag" }, [l.branche || "Sonstiges"]),
+      state.city === ALL ? el("span", null, [cityOf(l)]) : null,
       l.stadtteil ? el("span", null, [l.stadtteil]) : null,
       el("span", null, [l.adresse || ""])
     ]);
@@ -715,10 +735,10 @@ a { color: inherit; }
     r.hint.textContent = l.hinweis ? "Prüfen: " + l.hinweis : "";
     r.hint.hidden = !l.hinweis;
 
-    var q = encodeURIComponent((l.name || "") + " " + (l.adresse || "Nürnberg"));
+    var q = encodeURIComponent((l.name || "") + " " + (l.adresse || cityOf(l)));
     fill(r.checks, [
-      l.website === "unklar"
-        ? el("span", { class: "badge unsure" }, ["Website unklar"])
+      l.website === "unklar" ? el("span", { class: "badge unsure" }, ["Website unklar"])
+        : l.website === "ungeprüft" ? el("span", { class: "badge unchecked" }, ["Website ungeprüft"])
         : el("span", { class: "badge none" }, ["Keine Website gefunden"]),
       isDue(l) ? el("span", { class: "badge due" }, [(l.rueckruf < todayISO() ? "Überfällig seit " : "Heute anrufen · ") + fmtDay(l.rueckruf)]) : null,
       el("a", { href: "https://www.google.com/search?q=" + q, target: "_blank", rel: "noopener" }, ["Google prüfen"]),
@@ -739,7 +759,10 @@ a { color: inherit; }
   }
 
   /* Filter, Sortierung, Kopfzeile */
-  function cityLeads() { return leads.filter(function (l) { return (l.stadt || "Nürnberg") === state.city; }); }
+  function cityOf(l) { return l.stadt || "Nürnberg"; }
+  function cityLeads() { return state.city === ALL ? leads : leads.filter(function (l) { return cityOf(l) === state.city; }); }
+  function byCity(a, b) { return cityOf(a).localeCompare(cityOf(b), "de"); }
+  function cityLabel() { return state.city === ALL ? "allen Städten" : state.city; }
 
   function visibleLeads() {
     var q = state.q.trim().toLowerCase();
@@ -748,13 +771,14 @@ a { color: inherit; }
       if (state.status === "_due") { if (!isDue(l)) return false; }
       else if (state.status && (l.status || "offen") !== state.status) return false;
       if (q) {
-        var hay = [l.name, l.adresse, l.stadtteil, l.branche, l.inhaber, l.telefon, l.notiz, l.beschreibung, (l.leistungen || []).join(" ")].join(" ").toLowerCase();
+        var hay = [l.name, l.stadt, l.adresse, l.stadtteil, l.branche, l.inhaber, l.telefon, l.notiz, l.beschreibung, (l.leistungen || []).join(" ")].join(" ").toLowerCase();
         if (hay.indexOf(q) === -1) return false;
       }
       return true;
     });
     var byName = function (a, b) { return (a.name || "").localeCompare(b.name || "", "de"); };
     var sorters = {
+      stadt: function (a, b) { return byCity(a, b) || sorters.status(a, b); },
       status: function (a, b) {
         var da = isDue(a) ? 0 : 1, dbb = isDue(b) ? 0 : 1;
         if (da !== dbb) return da - dbb;
@@ -767,27 +791,30 @@ a { color: inherit; }
       stadtteil: function (a, b) { return (a.stadtteil || "").localeCompare(b.stadtteil || "", "de") || byName(a, b); },
       recent: function (a, b) { return (b.updatedAt || "").localeCompare(a.updatedAt || "") || byName(a, b); }
     };
-    return out.sort(sorters[state.sort] || sorters.status);
+    return out.sort(sorters[state.sort] || sorters.stadt);
   }
 
   function renderTabs() {
-    var cities = [];
-    leads.forEach(function (l) { var c = l.stadt || "Nürnberg"; if (cities.indexOf(c) === -1) cities.push(c); });
-    if (cities.indexOf("Nürnberg") === -1) cities.unshift("Nürnberg");
-    if (cities.indexOf(state.city) === -1) state.city = cities[0];
+    var counts = {};
+    leads.forEach(function (l) { var c = cityOf(l); counts[c] = (counts[c] || 0) + 1; });
+    var cities = Object.keys(counts).sort(function (a, b) { return a.localeCompare(b, "de"); });
+    if (leads.length && state.city !== ALL && !counts[state.city]) state.city = ALL;
     var tabs = $("tabs");
+    var keepScroll = tabs.scrollLeft;
     tabs.replaceChildren();
-    cities.forEach(function (c) {
-      var n = leads.filter(function (l) { return (l.stadt || "Nürnberg") === c; }).length;
-      tabs.appendChild(el("button", {
-        type: "button", class: "tab", "aria-pressed": String(c === state.city),
+    [ALL].concat(cities).forEach(function (c) {
+      var active = c === state.city;
+      var b = el("button", {
+        type: "button", class: "tab", "aria-pressed": String(active),
         onclick: function () { state.city = c; state.status = ""; state.branche = ""; savePrefs(); renderAll(); }
-      }, [c + " ", el("small", null, [String(n)])]));
+      }, [(c === ALL ? "Alle Städte" : c) + " ", el("small", null, [String(c === ALL ? leads.length : counts[c])])]);
+      tabs.appendChild(b);
     });
-    PLANNED.forEach(function (c) {
-      if (cities.indexOf(c) !== -1) return;
-      tabs.appendChild(el("button", { type: "button", class: "tab", disabled: true, title: "Kommt als Nächstes" }, [c + " ", el("small", null, ["bald"])]));
-    });
+    tabs.scrollLeft = keepScroll;
+    var act = tabs.querySelector('[aria-pressed="true"]');
+    if (act && (act.offsetLeft < tabs.scrollLeft || act.offsetLeft + act.offsetWidth > tabs.scrollLeft + tabs.clientWidth)) {
+      tabs.scrollLeft = act.offsetLeft - 16;
+    }
   }
 
   function renderStats() {
@@ -827,16 +854,30 @@ a { color: inherit; }
     var vis = visibleLeads();
     var keep = new Set(vis.map(function (l) { return l.id; }));
     cards.forEach(function (card, id) { if (!keep.has(id)) { card.remove(); } });
+    var grouped = state.city === ALL && state.sort === "stadt";
+    var perCity = {};
+    if (grouped) vis.forEach(function (l) { var c = cityOf(l); perCity[c] = (perCity[c] || 0) + 1; });
+    var usedHeads = new Set();
+    var lastCity = null;
     vis.forEach(function (l) {
+      if (grouped && cityOf(l) !== lastCity) {
+        lastCity = cityOf(l);
+        var h = heads.get(lastCity);
+        if (!h) { h = el("h2", { class: "city-head" }); heads.set(lastCity, h); }
+        fill(h, [lastCity, el("small", null, [perCity[lastCity] + (perCity[lastCity] === 1 ? " Lead" : " Leads")])]);
+        usedHeads.add(lastCity);
+        listEl.appendChild(h);
+      }
       var card = cards.get(l.id);
       if (!card) { card = buildCard(l); cards.set(l.id, card); }
       updateCard(card, l);
       listEl.appendChild(card);
     });
+    heads.forEach(function (h, c) { if (!usedHeads.has(c)) h.remove(); });
     var total = cityLeads().length;
-    countEl.textContent = total ? vis.length + " von " + total + " Leads in " + state.city : "";
+    countEl.textContent = total ? vis.length + " von " + total + " Leads in " + cityLabel() : "";
     if (!vis.length && total) { emptyEl.hidden = false; emptyEl.textContent = "Keine Leads für diese Filter."; }
-    else if (!total && db) { emptyEl.hidden = false; emptyEl.textContent = "Für " + state.city + " sind noch keine Leads gespeichert."; }
+    else if (!total && db) { emptyEl.hidden = false; emptyEl.textContent = "Für " + cityLabel() + " sind noch keine Leads gespeichert."; }
     else if (total) { emptyEl.hidden = true; }
   }
 
@@ -860,12 +901,12 @@ a { color: inherit; }
   }
   function buildCsv() {
     var labels = {}; STATUS.forEach(function (s) { labels[s.key] = s.label; });
-    var cols = [["name", "Name"], ["branche", "Branche"], ["telefon", "Telefon"], ["telefon2", "Telefon 2"], ["email", "E-Mail"], ["inhaber", "Inhaber"],
+    var cols = [["stadt", "Stadt"], ["name", "Name"], ["branche", "Branche"], ["telefon", "Telefon"], ["telefon2", "Telefon 2"], ["email", "E-Mail"], ["inhaber", "Inhaber"],
       ["adresse", "Adresse"], ["stadtteil", "Stadtteil"], ["zeiten", "Öffnungszeiten"], ["bewertung", "Bewertungen"], ["beschreibung", "Beschreibung"], ["leistungen", "Leistungen"],
-      ["online", "Online bisher"], ["ansatz", "Gesprächsansatz"], ["hinweis", "Prüfen"], ["status", "Status"], ["rueckruf", "Wiedervorlage"], ["notiz", "Notizen"], ["quelle", "Quelle"]];
+      ["online", "Online bisher"], ["ansatz", "Gesprächsansatz"], ["hinweis", "Prüfen"], ["website", "Website"], ["status", "Status"], ["rueckruf", "Wiedervorlage"], ["notiz", "Notizen"], ["quelle", "Quelle"]];
     var rows = [cols.map(function (c) { return c[1]; }).join(";")];
     visibleLeads().forEach(function (l) {
-      rows.push(cols.map(function (c) { return csvCell(c[0] === "status" ? labels[l.status || "offen"] : l[c[0]]); }).join(";"));
+      rows.push(cols.map(function (c) { return csvCell(c[0] === "status" ? labels[l.status || "offen"] : c[0] === "stadt" ? cityOf(l) : l[c[0]]); }).join(";"));
     });
     return "﻿" + rows.join("\r\n");
   }
@@ -881,7 +922,7 @@ a { color: inherit; }
     var btn = $("export");
     btn.hidden = false;
     btn.addEventListener("click", function () {
-      var name = "leads-" + state.city.toLowerCase().replace(/ü/g, "ue").replace(/ö/g, "oe").replace(/ä/g, "ae").replace(/[^a-z0-9]+/g, "-") + ".csv";
+      var name = "leads-" + (state.city === ALL ? "bayern" : state.city).toLowerCase().replace(/ü/g, "ue").replace(/ö/g, "oe").replace(/ä/g, "ae").replace(/[^a-z0-9]+/g, "-") + ".csv";
       downloads.save({ filename: name, data: buildCsv() }).then(function () { toast("CSV gespeichert"); }, function (err) {
         var code = err && err.code;
         if (code === "declined") return;
