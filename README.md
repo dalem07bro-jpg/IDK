@@ -9,8 +9,9 @@ Anrufliste mit lokalen Betrieben, die keine eigene Website haben: Zielgruppe fü
   und Hinweise, was vor dem Anruf zu prüfen ist.
 - **Anrufen:** Der Knopf öffnet die Telefon-App (`tel:`-Link) und kopiert die Nummer zusätzlich. Am Computer zeigt „QR“
   einen QR-Code, den du mit der Handy-Kamera scannst, dann wählt das Handy die Nummer.
-- **Daten:** [`data/leads-nuernberg.json`](data/leads-nuernberg.json) und
-  [`data/leads-nuernberg.csv`](data/leads-nuernberg.csv) (Semikolon, UTF-8 mit BOM, öffnet direkt in Excel).
+- **Daten:** je Stadt als JSON und CSV (Semikolon, UTF-8 mit BOM, öffnet direkt in Excel):
+  - Nürnberg, 34 Leads: [`data/leads-nuernberg.json`](data/leads-nuernberg.json), [`data/leads-nuernberg.csv`](data/leads-nuernberg.csv)
+  - München, 28 Leads: [`data/leads-muenchen.json`](data/leads-muenchen.json), [`data/leads-muenchen.csv`](data/leads-muenchen.csv)
 
 ## Wie die Liste entstanden ist
 
@@ -18,7 +19,7 @@ Anrufliste mit lokalen Betrieben, die keine eigene Website haben: Zielgruppe fü
    Yelp, Cylex): Friseur, Schneiderei, Kfz, Maler, Fliesen, Fußpflege, Imbiss, Blumen, Metzgerei u. a.
 2. Für jeden Treffer eine eigene Websuche nach dem Namen gemacht. Wer eine eigene Domain hat, ist rausgeflogen
    (etwa die Hälfte).
-3. Übrig: 34 Betriebe mit Telefonnummer, Stand 28.09.2026. `website: "unklar"` heißt, dass es Hinweise auf eine
+3. Übrig: 34 Betriebe in Nürnberg und 28 in München, alle mit Telefonnummer, Stand 28.09.2026. `website: "unklar"` heißt, dass es Hinweise auf eine
    alte Website gibt.
 
 Die Daten stammen aus Suchergebnissen. Nummer und Adresse vor dem Anruf kurz gegenprüfen (Link „Google prüfen“
