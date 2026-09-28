@@ -1,0 +1,821 @@
+<title>Website-Leads Nürnberg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+:root {
+  --bg: #f2f4f6;
+  --surface: #ffffff;
+  --surface-2: #e9edf1;
+  --ink: #14202b;
+  --ink-2: #4b5967;
+  --ink-3: #75828f;
+  --line: #d6dde4;
+  --accent: #c8102e;
+  --accent-soft: #fbe5e8;
+  --on-accent: #ffffff;
+  --focus: #2563a8;
+  --s-offen: #5f6b78;
+  --s-nicht_erreicht: #a86a12;
+  --s-rueckruf: #2563a8;
+  --s-interesse: #22824a;
+  --s-termin: #6a48b8;
+  --s-kunde: #146b3a;
+  --s-kein_interesse: #8a949e;
+  --due: #c8102e;
+  --shadow: 0 1px 2px rgba(20, 32, 43, .06), 0 4px 14px rgba(20, 32, 43, .05);
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0e141a;
+    --surface: #161f28;
+    --surface-2: #1d2833;
+    --ink: #e6ebf0;
+    --ink-2: #a7b3bf;
+    --ink-3: #7d8a97;
+    --line: #2a3643;
+    --accent: #f04a60;
+    --accent-soft: #3a1a21;
+    --on-accent: #1a0a0d;
+    --focus: #6aa6ec;
+    --s-offen: #9aa6b2;
+    --s-nicht_erreicht: #e0a64a;
+    --s-rueckruf: #6aa6ec;
+    --s-interesse: #58c285;
+    --s-termin: #a78bf0;
+    --s-kunde: #3fd07e;
+    --s-kein_interesse: #6c7782;
+    --due: #f04a60;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e141a;
+  --surface: #161f28;
+  --surface-2: #1d2833;
+  --ink: #e6ebf0;
+  --ink-2: #a7b3bf;
+  --ink-3: #7d8a97;
+  --line: #2a3643;
+  --accent: #f04a60;
+  --accent-soft: #3a1a21;
+  --on-accent: #1a0a0d;
+  --focus: #6aa6ec;
+  --s-offen: #9aa6b2;
+  --s-nicht_erreicht: #e0a64a;
+  --s-rueckruf: #6aa6ec;
+  --s-interesse: #58c285;
+  --s-termin: #a78bf0;
+  --s-kunde: #3fd07e;
+  --s-kein_interesse: #6c7782;
+  --due: #f04a60;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-inline: 16px;
+  padding-block: 0 48px;
+}
+.wrap { max-width: 880px; margin-inline: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+a { color: inherit; }
+
+/* Kopf */
+.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  margin-inline: -16px;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.top-inner { max-width: 880px; margin-inline: auto; display: grid; gap: 10px; }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: .01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.brand h1 .dot { color: var(--accent); }
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+.tab[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tab:disabled { cursor: default; color: var(--ink-3); background: transparent; border-style: dashed; }
+.tab small { font-weight: 500; opacity: .8; }
+
+.stats { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.stats::-webkit-scrollbar { display: none; }
+.stat {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.stat b {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--c, var(--ink));
+  font-size: 14px;
+}
+.stat[aria-pressed="true"] { border-color: var(--c, var(--ink)); box-shadow: inset 0 0 0 1px var(--c, var(--ink)); color: var(--ink); }
+.stat .swatch { width: 8px; height: 8px; border-radius: 2px; background: var(--c); align-self: center; }
+
+/* Werkzeugleiste */
+.tools { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
+.tools input[type="search"], .tools select {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 7px 10px;
+  min-width: 0;
+}
+.tools input[type="search"] { flex: 1 1 100%; }
+.tools select { flex: 1 1 150px; }
+@media (min-width: 700px) {
+  .tools input[type="search"] { flex: 1 1 220px; }
+  .tools select { flex: 0 1 auto; }
+}
+.btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.count { color: var(--ink-3); font-size: 13px; margin: 12px 0 8px; font-variant-numeric: tabular-nums; }
+
+/* Leitfaden */
+.guide {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.guide summary { cursor: pointer; padding: 10px 14px; font-weight: 600; }
+.guide-body { padding: 0 14px 14px; color: var(--ink-2); max-width: 68ch; }
+.guide-body ol { padding-left: 20px; margin: 0 0 10px; display: grid; gap: 6px; }
+.guide-body q { color: var(--ink); }
+.legal { font-size: 13px; border-left: 3px solid var(--accent); padding: 4px 0 4px 10px; margin: 0; }
+
+/* Lead-Karten */
+.list { display: grid; gap: 10px; }
+.lead {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--sc, var(--s-offen));
+  border-radius: 10px;
+  padding: 14px 14px 12px;
+  display: grid;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+.lead[data-status="kein_interesse"] { opacity: .62; }
+.lead[data-status="kein_interesse"] .name { text-decoration: line-through; text-decoration-thickness: 1px; }
+.lead-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+.who { min-width: 0; flex: 1 1 260px; }
+.name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 0 0 4px;
+  overflow-wrap: anywhere;
+}
+.meta { color: var(--ink-2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--ink);
+}
+.dial { display: grid; gap: 6px; justify-items: end; }
+.number {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+  user-select: all;
+  white-space: nowrap;
+}
+.dial-actions { display: flex; gap: 6px; }
+.dial-actions a, .dial-actions button {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  text-decoration: none;
+  cursor: pointer;
+}
+.dial-actions a.call { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 0; font-size: 14px; }
+.facts dt { color: var(--ink-3); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+.facts dd .mono { font-family: var(--mono); font-size: 13px; user-select: all; }
+.info { margin: 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.checks { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: 13px; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 10px;
+  background: var(--surface-2);
+}
+.badge.none::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--s-interesse); }
+.badge.unsure::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--s-nicht_erreicht); }
+.badge.due { background: var(--accent-soft); color: var(--due); }
+.checks a { color: var(--ink-2); }
+
+.status-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.st {
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.st:hover { border-color: var(--c); color: var(--ink); }
+.st[aria-pressed="true"] { background: var(--c); border-color: var(--c); color: var(--surface); }
+.st:disabled { cursor: not-allowed; opacity: .5; }
+
+.work { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; align-items: start; }
+.work label { display: grid; gap: 3px; font-size: 12px; color: var(--ink-3); font-weight: 600; letter-spacing: .03em; text-transform: uppercase; }
+.work textarea, .work input {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 6px 9px;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--ink);
+}
+.work textarea { resize: vertical; min-height: 38px; }
+.stamp { font-size: 12px; color: var(--ink-3); }
+
+.empty {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 28px 18px;
+  text-align: center;
+  color: var(--ink-2);
+}
+.foot { margin-top: 24px; font-size: 13px; color: var(--ink-3); max-width: 70ch; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: calc(100% - 32px);
+  z-index: 10;
+}
+
+@media (max-width: 560px) {
+  .brand h1 { font-size: 26px; }
+  .dial { justify-items: start; }
+  .work { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lead { transition: border-color .2s ease, opacity .2s ease; }
+}
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <h1>Website-Leads<span class="dot">.</span></h1>
+      <nav class="tabs" id="tabs" aria-label="Region"></nav>
+    </div>
+    <div class="stats" id="stats" role="group" aria-label="Status filtern"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <details class="guide" id="guide">
+    <summary>Gesprächsleitfaden &amp; Spielregeln</summary>
+    <div class="guide-body">
+      <ol>
+        <li><strong>Begrüßen:</strong> <q>Guten Tag, hier ist … aus Nürnberg. Spreche ich mit dem Inhaber oder der Inhaberin?</q></li>
+        <li><strong>Aufhänger:</strong> <q>Ich habe gesehen, dass Sie in den Branchenbüchern gut gefunden werden, aber keine eigene Website haben. Viele Kunden schauen heute zuerst online.</q> Den Aufhänger aus der Karte nutzen (Bewertungen, Öffnungszeiten, Events).</li>
+        <li><strong>Angebot kurz halten:</strong> Was du baust, wie schnell, grober Preisrahmen.</li>
+        <li><strong>Erlaubnis holen:</strong> <q>Darf ich Ihnen ein unverbindliches Beispiel per E-Mail schicken?</q> Die E-Mail-Adresse unter Notizen eintragen.</li>
+        <li><strong>Kein Interesse?</strong> <q>Darf ich mich in ein paar Monaten noch mal melden?</q> Wenn ja, eine Wiedervorlage setzen.</li>
+      </ol>
+      <p class="legal">Werbeanrufe bei Firmen sind nur erlaubt, wenn ein Interesse vermutet werden kann (§ 7 UWG). Werbe-E-Mails brauchen vorher eine ausdrückliche Einwilligung. Frag deshalb am Telefon, ob du schreiben darfst, und notiere die Zusage. Keine Rechtsberatung.</p>
+    </div>
+  </details>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="Name, Straße oder Stadtteil suchen" aria-label="Suchen">
+    <select id="branche" aria-label="Branche"></select>
+    <select id="sort" aria-label="Sortierung">
+      <option value="status">Sortiert: nächster Anruf</option>
+      <option value="branche">Sortiert: Branche</option>
+      <option value="stadtteil">Sortiert: Stadtteil</option>
+      <option value="recent">Sortiert: zuletzt bearbeitet</option>
+    </select>
+    <button class="btn" id="export" type="button" hidden>CSV exportieren</button>
+  </div>
+
+  <p class="count" id="count"></p>
+  <section class="list" id="list" aria-live="polite"></section>
+  <div class="empty" id="empty">Die Leads werden geladen …</div>
+
+  <p class="foot">Daten aus öffentlichen Branchenbüchern (11880, Gelbe Seiten, Das Örtliche, Yelp u. a.), Stand 28.09.2026. „Keine Website gefunden“ heißt: Bei der Websuche tauchte keine eigene Domain auf. Vor dem Anruf kurz über „Google prüfen“ gegenchecken.</p>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var STATUS = [
+    { key: "offen", label: "Offen" },
+    { key: "nicht_erreicht", label: "Nicht erreicht" },
+    { key: "rueckruf", label: "Rückruf" },
+    { key: "interesse", label: "Interesse" },
+    { key: "termin", label: "Termin" },
+    { key: "kunde", label: "Kunde" },
+    { key: "kein_interesse", label: "Kein Interesse" }
+  ];
+  var STATUS_RANK = { rueckruf: 0, offen: 1, nicht_erreicht: 2, interesse: 3, termin: 4, kunde: 5, kein_interesse: 6 };
+  var PLANNED = ["München", "Bayern"];
+  var PREF_KEY = "leads-prefs-v1";
+
+  var state = { city: "Nürnberg", q: "", branche: "", status: "", sort: "status" };
+  var leads = [];
+  var db = null;
+  var readOnly = false;
+  var cards = new Map();
+  var queues = new Map();
+  var noteTimers = new Map();
+
+  var $ = function (id) { return document.getElementById(id); };
+  var listEl = $("list"), emptyEl = $("empty"), countEl = $("count");
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(PREF_KEY) || "null");
+    if (saved && typeof saved === "object") {
+      ["city", "branche", "status", "sort"].forEach(function (k) { if (typeof saved[k] === "string") state[k] = saved[k]; });
+    }
+  } catch (e) { /* ohne Speicher weiter */ }
+  function savePrefs() {
+    try { localStorage.setItem(PREF_KEY, JSON.stringify({ city: state.city, branche: state.branche, status: state.status, sort: state.sort })); } catch (e) { /* egal */ }
+  }
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      var v = attrs[k];
+      if (v == null || v === false) return;
+      if (k === "text") n.textContent = v;
+      else if (k === "class") n.className = v;
+      else if (k.slice(0, 2) === "on") n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v === true ? "" : v);
+    });
+    (children || []).forEach(function (c) { if (c) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+
+  function fill(node, kids) {
+    node.replaceChildren.apply(node, kids.filter(Boolean));
+  }
+
+  var toastTimer = null;
+  function toast(msg) {
+    var t = $("toast");
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 2600);
+  }
+
+  function telHref(num) {
+    var digits = String(num || "").replace(/\(.*?\)/g, "").replace(/[^\d+]/g, "");
+    if (!digits) return null;
+    if (digits.charAt(0) === "+") return "tel:" + digits;
+    if (digits.slice(0, 2) === "00") return "tel:+" + digits.slice(2);
+    if (digits.charAt(0) === "0") return "tel:+49" + digits.slice(1);
+    return "tel:" + digits;
+  }
+  function todayISO() {
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function isDue(l) {
+    return l.rueckruf && l.rueckruf <= todayISO() && l.status !== "kunde" && l.status !== "kein_interesse";
+  }
+  function fmtDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    return d.toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+  }
+  function fmtDay(iso) {
+    var p = String(iso || "").split("-");
+    return p.length === 3 ? p[2] + "." + p[1] + "." : iso;
+  }
+
+  function copy(text, btn) {
+    function done() { toast("Nummer kopiert: " + text); }
+    function fallback() {
+      var num = btn && btn.closest(".dial") && btn.closest(".dial").querySelector(".number");
+      if (num) {
+        var r = document.createRange();
+        r.selectNodeContents(num);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        toast("Nummer markiert, jetzt kopieren");
+      }
+    }
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  }
+
+  /* Schreiben: pro Dokument eins nach dem anderen */
+  function write(id, patch) {
+    if (!db || readOnly) return Promise.resolve();
+    var body = Object.assign({}, patch, { updatedAt: new Date().toISOString() });
+    var prev = queues.get(id) || Promise.resolve();
+    var next = prev.then(function () {
+      return db.doc("leads/" + id).update(body);
+    }).catch(function (err) {
+      var code = err && err.code;
+      if (code === "invalid_argument" || code === "not_granted") {
+        readOnly = true;
+        toast("Du kannst diese Liste nur ansehen, Änderungen werden nicht gespeichert.");
+        renderAll();
+      } else if (code === "unavailable") {
+        return new Promise(function (res) { setTimeout(res, 600 + Math.random() * 800); })
+          .then(function () { return db.doc("leads/" + id).update(body); })
+          .catch(function () { toast("Speichern hat nicht geklappt. Bitte gleich noch mal versuchen."); });
+      } else {
+        toast("Speichern hat nicht geklappt. Bitte gleich noch mal versuchen.");
+      }
+    });
+    queues.set(id, next);
+    return next;
+  }
+
+  function setLocal(id, patch) {
+    var l = leads.find(function (x) { return x.id === id; });
+    if (l) Object.assign(l, patch, { updatedAt: new Date().toISOString() });
+  }
+
+  function flushNote(id) {
+    var t = noteTimers.get(id);
+    if (!t) return;
+    clearTimeout(t.timer);
+    noteTimers.delete(id);
+    write(id, { notiz: t.value });
+  }
+
+  /* Karte bauen */
+  function buildCard(l) {
+    var numEl = el("span", { class: "number" });
+    var callA = el("a", { class: "call" }, ["Anrufen"]);
+    var copyB = el("button", { type: "button" }, ["Kopieren"]);
+    var dial = el("div", { class: "dial" }, [numEl, el("div", { class: "dial-actions" }, [callA, copyB])]);
+    copyB.addEventListener("click", function () { copy(numEl.textContent, copyB); });
+
+    var name = el("h3", { class: "name" });
+    var meta = el("div", { class: "meta" });
+    var head = el("div", { class: "lead-head" }, [el("div", { class: "who" }, [name, meta]), dial]);
+
+    var facts = el("dl", { class: "facts" });
+    var info = el("p", { class: "info" });
+    var checks = el("div", { class: "checks" });
+
+    var statusRow = el("div", { class: "status-row", role: "group", "aria-label": "Status" });
+    STATUS.forEach(function (s) {
+      var b = el("button", { type: "button", class: "st", "data-s": s.key, style: "--c: var(--s-" + s.key + ")" }, [s.label]);
+      b.addEventListener("click", function () {
+        var id = card.dataset.id;
+        setLocal(id, { status: s.key });
+        updateCard(card, leads.find(function (x) { return x.id === id; }));
+        renderStats();
+        write(id, { status: s.key });
+      });
+      statusRow.appendChild(b);
+    });
+
+    var ta = el("textarea", { id: "notiz-" + l.id, rows: "2", placeholder: "Wer war dran, was wurde gesagt, E-Mail-Einwilligung …" });
+    ta.addEventListener("input", function () {
+      var id = card.dataset.id;
+      var t = noteTimers.get(id);
+      if (t) clearTimeout(t.timer);
+      var entry = { value: ta.value, timer: setTimeout(function () { flushNote(id); }, 900) };
+      noteTimers.set(id, entry);
+      setLocal(id, { notiz: ta.value });
+    });
+    ta.addEventListener("blur", function () { flushNote(card.dataset.id); });
+
+    var date = el("input", { type: "date", id: "rr-" + l.id });
+    date.addEventListener("change", function () {
+      var id = card.dataset.id;
+      setLocal(id, { rueckruf: date.value });
+      updateCard(card, leads.find(function (x) { return x.id === id; }));
+      write(id, { rueckruf: date.value });
+    });
+
+    var work = el("div", { class: "work" }, [
+      el("label", { for: "notiz-" + l.id }, ["Notizen", ta]),
+      el("label", { for: "rr-" + l.id }, ["Wiedervorlage", date])
+    ]);
+    var stamp = el("div", { class: "stamp" });
+
+    var card = el("article", { class: "lead" }, [head, facts, info, checks, statusRow, work, stamp]);
+    card.dataset.id = l.id;
+    card._r = { numEl: numEl, callA: callA, name: name, meta: meta, facts: facts, info: info, checks: checks, statusRow: statusRow, ta: ta, date: date, stamp: stamp };
+    return card;
+  }
+
+  function updateCard(card, l) {
+    var r = card._r;
+    var status = STATUS_RANK[l.status] != null ? l.status : "offen";
+    card.dataset.status = status;
+    card.style.setProperty("--sc", "var(--s-" + status + ")");
+
+    r.name.textContent = l.name || "Ohne Namen";
+    fill(r.meta, [
+      el("span", { class: "tag" }, [l.branche || "Sonstiges"]),
+      l.stadtteil ? el("span", null, [l.stadtteil]) : null,
+      el("span", null, [l.adresse || ""])
+    ]);
+
+    r.numEl.textContent = l.telefon || "keine Nummer";
+    var href = telHref(l.telefon);
+    if (href) { r.callA.setAttribute("href", href); r.callA.hidden = false; } else { r.callA.hidden = true; }
+
+    var f = [];
+    if (l.inhaber) f.push(["Inhaber", l.inhaber]);
+    if (l.telefon2) f.push(["2. Nummer", l.telefon2, true]);
+    if (l.email) f.push(["E-Mail", l.email, true]);
+    if (l.zeiten) f.push(["Geöffnet", l.zeiten]);
+    fill(r.facts, f.reduce(function (acc, row) {
+      acc.push(el("dt", null, [row[0]]));
+      acc.push(el("dd", null, [row[2] ? el("span", { class: "mono" }, [row[1]]) : row[1]]));
+      return acc;
+    }, []));
+    r.facts.hidden = f.length === 0;
+
+    r.info.textContent = l.info || "";
+    r.info.hidden = !l.info;
+
+    var q = encodeURIComponent((l.name || "") + " " + (l.adresse || "Nürnberg"));
+    fill(r.checks, [
+      l.website === "unklar"
+        ? el("span", { class: "badge unsure" }, ["Website unklar"])
+        : el("span", { class: "badge none" }, ["Keine Website gefunden"]),
+      isDue(l) ? el("span", { class: "badge due" }, [(l.rueckruf < todayISO() ? "Überfällig seit " : "Heute anrufen · ") + fmtDay(l.rueckruf)]) : null,
+      el("a", { href: "https://www.google.com/search?q=" + q, target: "_blank", rel: "noopener" }, ["Google prüfen"]),
+      l.quelle ? el("a", { href: l.quelle, target: "_blank", rel: "noopener" }, ["Quelle"]) : null
+    ]);
+
+    Array.prototype.forEach.call(r.statusRow.children, function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.s === status));
+      b.disabled = readOnly;
+    });
+
+    if (document.activeElement !== r.ta && !noteTimers.has(l.id)) r.ta.value = l.notiz || "";
+    r.ta.readOnly = readOnly;
+    if (document.activeElement !== r.date) r.date.value = l.rueckruf || "";
+    r.date.disabled = readOnly;
+
+    r.stamp.textContent = l.updatedAt ? "Zuletzt geändert: " + fmtDate(l.updatedAt) : "Noch nicht bearbeitet";
+  }
+
+  /* Filter, Sortierung, Kopfzeile */
+  function cityLeads() { return leads.filter(function (l) { return (l.stadt || "Nürnberg") === state.city; }); }
+
+  function visibleLeads() {
+    var q = state.q.trim().toLowerCase();
+    var out = cityLeads().filter(function (l) {
+      if (state.branche && l.branche !== state.branche) return false;
+      if (state.status === "_due") { if (!isDue(l)) return false; }
+      else if (state.status && (l.status || "offen") !== state.status) return false;
+      if (q) {
+        var hay = [l.name, l.adresse, l.stadtteil, l.branche, l.inhaber, l.telefon, l.notiz].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+    var byName = function (a, b) { return (a.name || "").localeCompare(b.name || "", "de"); };
+    var sorters = {
+      status: function (a, b) {
+        var da = isDue(a) ? 0 : 1, dbb = isDue(b) ? 0 : 1;
+        if (da !== dbb) return da - dbb;
+        var ra = STATUS_RANK[a.status || "offen"], rb = STATUS_RANK[b.status || "offen"];
+        if (ra !== rb) return ra - rb;
+        if (a.rueckruf && b.rueckruf && a.rueckruf !== b.rueckruf) return a.rueckruf < b.rueckruf ? -1 : 1;
+        return byName(a, b);
+      },
+      branche: function (a, b) { return (a.branche || "").localeCompare(b.branche || "", "de") || byName(a, b); },
+      stadtteil: function (a, b) { return (a.stadtteil || "").localeCompare(b.stadtteil || "", "de") || byName(a, b); },
+      recent: function (a, b) { return (b.updatedAt || "").localeCompare(a.updatedAt || "") || byName(a, b); }
+    };
+    return out.sort(sorters[state.sort] || sorters.status);
+  }
+
+  function renderTabs() {
+    var cities = [];
+    leads.forEach(function (l) { var c = l.stadt || "Nürnberg"; if (cities.indexOf(c) === -1) cities.push(c); });
+    if (cities.indexOf("Nürnberg") === -1) cities.unshift("Nürnberg");
+    if (cities.indexOf(state.city) === -1) state.city = cities[0];
+    var tabs = $("tabs");
+    tabs.replaceChildren();
+    cities.forEach(function (c) {
+      var n = leads.filter(function (l) { return (l.stadt || "Nürnberg") === c; }).length;
+      tabs.appendChild(el("button", {
+        type: "button", class: "tab", "aria-pressed": String(c === state.city),
+        onclick: function () { state.city = c; state.status = ""; state.branche = ""; savePrefs(); renderAll(); }
+      }, [c + " ", el("small", null, [String(n)])]));
+    });
+    PLANNED.forEach(function (c) {
+      if (cities.indexOf(c) !== -1) return;
+      tabs.appendChild(el("button", { type: "button", class: "tab", disabled: true, title: "Kommt als Nächstes" }, [c + " ", el("small", null, ["bald"])]));
+    });
+  }
+
+  function renderStats() {
+    var src = cityLeads();
+    var stats = $("stats");
+    stats.replaceChildren();
+    var all = el("button", { type: "button", class: "stat", "aria-pressed": String(state.status === ""), onclick: function () { state.status = ""; savePrefs(); renderAll(); } },
+      ["Alle", el("b", null, [String(src.length)])]);
+    stats.appendChild(all);
+    var due = src.filter(isDue).length;
+    if (due) {
+      stats.appendChild(el("button", { type: "button", class: "stat", style: "--c: var(--due)", "aria-pressed": String(state.status === "_due"),
+        onclick: function () { state.status = state.status === "_due" ? "" : "_due"; savePrefs(); renderAll(); } },
+        [el("span", { class: "swatch" }), "Fällig", el("b", null, [String(due)])]));
+    }
+    STATUS.forEach(function (s) {
+      var n = src.filter(function (l) { return (l.status || "offen") === s.key; }).length;
+      stats.appendChild(el("button", {
+        type: "button", class: "stat", style: "--c: var(--s-" + s.key + ")", "aria-pressed": String(state.status === s.key),
+        onclick: function () { state.status = state.status === s.key ? "" : s.key; savePrefs(); renderAll(); }
+      }, [el("span", { class: "swatch" }), s.label, el("b", null, [String(n)])]));
+    });
+  }
+
+  function renderBranchen() {
+    var sel = $("branche");
+    var list = [];
+    cityLeads().forEach(function (l) { if (l.branche && list.indexOf(l.branche) === -1) list.push(l.branche); });
+    list.sort(function (a, b) { return a.localeCompare(b, "de"); });
+    if (state.branche && list.indexOf(state.branche) === -1) state.branche = "";
+    sel.replaceChildren(el("option", { value: "" }, ["Alle Branchen"]));
+    list.forEach(function (b) { sel.appendChild(el("option", { value: b }, [b])); });
+    sel.value = state.branche;
+  }
+
+  function renderList() {
+    var vis = visibleLeads();
+    var keep = new Set(vis.map(function (l) { return l.id; }));
+    cards.forEach(function (card, id) { if (!keep.has(id)) { card.remove(); } });
+    vis.forEach(function (l) {
+      var card = cards.get(l.id);
+      if (!card) { card = buildCard(l); cards.set(l.id, card); }
+      updateCard(card, l);
+      listEl.appendChild(card);
+    });
+    var total = cityLeads().length;
+    countEl.textContent = total ? vis.length + " von " + total + " Leads in " + state.city : "";
+    if (!vis.length && total) { emptyEl.hidden = false; emptyEl.textContent = "Keine Leads für diese Filter."; }
+    else if (!total && db) { emptyEl.hidden = false; emptyEl.textContent = "Für " + state.city + " sind noch keine Leads gespeichert."; }
+    else if (total) { emptyEl.hidden = true; }
+  }
+
+  function renderAll() {
+    renderTabs();
+    renderStats();
+    renderBranchen();
+    $("sort").value = state.sort;
+    renderList();
+  }
+
+  /* Bedienelemente */
+  $("q").addEventListener("input", function (e) { state.q = e.target.value; renderList(); });
+  $("branche").addEventListener("change", function (e) { state.branche = e.target.value; savePrefs(); renderList(); });
+  $("sort").addEventListener("change", function (e) { state.sort = e.target.value; savePrefs(); renderList(); });
+  window.addEventListener("pagehide", function () { Array.from(noteTimers.keys()).forEach(flushNote); });
+
+  function csvCell(v) {
+    var s = String(v == null ? "" : v);
+    return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+  function buildCsv() {
+    var labels = {}; STATUS.forEach(function (s) { labels[s.key] = s.label; });
+    var cols = [["name", "Name"], ["branche", "Branche"], ["telefon", "Telefon"], ["telefon2", "Telefon 2"], ["email", "E-Mail"], ["inhaber", "Inhaber"],
+      ["adresse", "Adresse"], ["stadtteil", "Stadtteil"], ["zeiten", "Öffnungszeiten"], ["status", "Status"], ["rueckruf", "Wiedervorlage"], ["notiz", "Notizen"], ["info", "Info"], ["quelle", "Quelle"]];
+    var rows = [cols.map(function (c) { return c[1]; }).join(";")];
+    visibleLeads().forEach(function (l) {
+      rows.push(cols.map(function (c) { return csvCell(c[0] === "status" ? labels[l.status || "offen"] : l[c[0]]); }).join(";"));
+    });
+    return "﻿" + rows.join("\r\n");
+  }
+
+  renderAll();
+
+  var claudeApi = window.claude && typeof window.claude.use === "function" ? window.claude : { use: function () { return Promise.resolve(null); } };
+
+  /* Downloads (CSV) */
+  (async function () {
+    var downloads = await claudeApi.use("downloads");
+    if (!downloads) return;
+    var btn = $("export");
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var name = "leads-" + state.city.toLowerCase().replace(/ü/g, "ue").replace(/ö/g, "oe").replace(/ä/g, "ae").replace(/[^a-z0-9]+/g, "-") + ".csv";
+      downloads.save({ filename: name, data: buildCsv() }).then(function () { toast("CSV gespeichert"); }, function (err) {
+        var code = err && err.code;
+        if (code === "declined") return;
+        if (code === "rate_limited") { toast("Es ist schon ein Speichern-Dialog offen."); return; }
+        if (code === "unavailable" || code === "not_granted" || code === "capability_disabled") { btn.hidden = true; }
+        toast("Export hat nicht geklappt.");
+      });
+    });
+  })();
+
+  /* Datenbank */
+  (async function () {
+    try { db = await claudeApi.use("db"); } catch (e) { db = null; }
+    if (!db) {
+      emptyEl.hidden = false;
+      emptyEl.textContent = "Die Liste ist in dieser Ansicht nicht verfügbar. Öffne die Seite in claude.ai, dann werden die Leads geladen.";
+      return;
+    }
+    db.collection("leads").onSnapshot(function (snap) {
+      leads = snap.docs.filter(function (d) { return d.exists; }).map(function (d) {
+        var data = Object.assign({}, d.data(), { id: d.id });
+        var pending = noteTimers.get(d.id);
+        if (pending) data.notiz = pending.value;
+        return data;
+      });
+      renderAll();
+    }, function (err) {
+      emptyEl.hidden = false;
+      emptyEl.textContent = err && err.code === "revoked"
+        ? "Die Liste ist in dieser Ansicht nicht mehr verfügbar."
+        : "Die Liste konnte nicht geladen werden. Lade die Seite neu.";
+    });
+  })();
+})();
+</script>
